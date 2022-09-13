@@ -1,5 +1,5 @@
 {
-  "name": "wind-speed-converter",
+  "name": "windwizard",
   "version": "1.0.0",
   "description": "This package will make it easy to convert the following speed units: km/h, m/s, ft/s, mph, knots",
   "main": "index.js",
@@ -10,6 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/AndreaViolaCaroline/1dv610-assignment-L1.git"
   },
+  "keywords": ["javascript", "wind", "speed", "converter"],
   "author": "Andrea Viola Caroline Åkesson",
   "license": "ISC",
   "bugs": {
