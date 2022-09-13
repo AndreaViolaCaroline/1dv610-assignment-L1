@@ -17,13 +17,15 @@ Then...
 import { windwizard } from 'windwizard'
 
 windwizard({
-  from: 'kmh',
-  to: 'ms'
+  fromUnit: 'kmh',
+  toUnit: 'ms',
+  from: '100'
 })
 
 ### What are the options?
 
 In the options object you specify:
 
-- from = What unit do you want to convert *FROM*?
-- to = What unit do you want to conver *TO*?
+- fromUnit = What unit do you want to convert *FROM*?
+- toUnit = What unit do you want to conver *TO*?
+- value = What *value* do you want to convert *FROM*?

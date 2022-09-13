@@ -4,6 +4,12 @@
 
 export class ErrorHandler {
   /**
+   * Instanciates an error handler.
+   */
+  constructor () {
+
+  }
+  /**
    * Ensure that input is a positive number.
    *
    * @param input - The input to validate.
