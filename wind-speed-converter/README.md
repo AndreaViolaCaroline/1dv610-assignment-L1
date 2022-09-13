@@ -4,13 +4,13 @@
 
 Use the Wind Wizard to convert the most common wind speed units (km/h, m/s, ft/s, mph, knots).
 
-## Installation
+## How do you install?
 
 Run `npm i windwizard`
 
 Then...
 
-## Usage
+## How do you use?
 
 import { windwizard } from 'windwizard'
 
@@ -19,7 +19,7 @@ windwizard({
   to: 'ms'
 })
 
-### Options
+### What are the options?
 
 In the options object you specify:
 
