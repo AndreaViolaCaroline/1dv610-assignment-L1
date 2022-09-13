@@ -2,6 +2,8 @@
 
 ## What is Wind Wizard?
 
+Disclaimer: This is a student project created according to specifics by Linneaus University, Sweden.
+
 Use the Wind Wizard to convert the most common wind speed units (km/h, m/s, ft/s, mph, knots).
 
 ## How do you install?
