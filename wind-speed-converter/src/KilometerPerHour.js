@@ -10,9 +10,9 @@ export class KilometerPerHour {
    * @return - The meter per second value.
    */
   convertToMeterPerSecond (kmh) {
-    const ms = (kmh * 1000) / 3600
+    const meterPerSecond = (kmh * 1000) / 3600
 
-    return ms
+    return meterPerSecond
   }
 
   /**
