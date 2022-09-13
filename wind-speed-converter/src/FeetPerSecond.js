@@ -1,5 +1,5 @@
 /**
- * Class handling conversion FROM feet per second TO kmh, ft/s, mph, knots.
+ * Class handling conversion FROM feet per second TO kmh, m/s, mph, knots.
  */
 
  export class FeetPerSecond {
