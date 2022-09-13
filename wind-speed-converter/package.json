@@ -1,0 +1,19 @@
+{
+  "name": "wind-speed-converter",
+  "version": "1.0.0",
+  "description": "This package will make it easy to convert the following speed units: km/h, m/s, ft/s, mph, knots",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreaViolaCaroline/1dv610-assignment-L1.git"
+  },
+  "author": "Andrea Viola Caroline Åkesson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndreaViolaCaroline/1dv610-assignment-L1/issues"
+  },
+  "homepage": "https://github.com/AndreaViolaCaroline/1dv610-assignment-L1#readme"
+}
