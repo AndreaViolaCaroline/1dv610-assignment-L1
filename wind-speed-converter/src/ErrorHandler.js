@@ -9,12 +9,26 @@ export class ErrorHandler {
   constructor () {
 
   }
+
+  /**
+   * Ensure that the unit is a valid unit.
+   *
+   * @param unit - The unit to validate.
+   */
+   validateInputUnit (unit) {
+    if (this.isEmpty(unit)) {
+      throw 'The unit is empty'
+    } else if (!this.isValidUnit(unit)) {
+      throw 'The unit is not a valid unit (kmh, ms, fts, mph, knots)'
+    }
+  }
+
   /**
    * Ensure that input is a positive number.
    *
    * @param input - The input to validate.
    */
-  validateInput (input) {
+  validateInputNumber (input) {
     if (this.isEmpty(input)) {
       throw 'The input is empty'
     } else if (this.isNotNumber(input)) {
@@ -22,6 +36,18 @@ export class ErrorHandler {
     } else if (!this.isPositive(input)) {
       throw 'Number must be positive'
     }
+  }
+
+  /**
+   * Is it a valid unit?
+   *
+   * @param unit - unit to be validated.
+   * @return - True if includes a valid unit.
+   */
+  isValidUnit (unit) {
+    const validUnits = ['kmh', 'ms', 'fts', 'mph', 'knots']
+
+    return validUnits.includes(unit)
   }
 
   /**

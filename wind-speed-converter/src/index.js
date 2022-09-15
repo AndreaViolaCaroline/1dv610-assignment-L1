@@ -1,19 +1,28 @@
 /**
  * Main entry point package.
  */
-import { ErrorHandler } from './ErrorHandler'
-import { FeetPerSecond } from './FeetPerSecond'
-import { KilometerPerHour } from './KilometerPerHour'
-import { Knots } from './Knots'
-import { MeterPerSecond } from './MeterPerSecond'
-import { MilesPerHour } from './MilesPerHour'
+import { ErrorHandler } from './ErrorHandler.js'
+import { FeetPerSecond } from './FeetPerSecond.js'
+import { KilometerPerHour } from './KilometerPerHour.js'
+import { Knots } from './Knots.js'
+import { MeterPerSecond } from './MeterPerSecond.js'
+import { MilesPerHour } from './MilesPerHour.js'
 
-function windwizard (options) {
+/**
+ * Converts one wind speed unit to another.
+ *
+ * @param {*} options 
+ * @returns 
+ */
+export default function windwizard (options) {
   const errorhandler = new ErrorHandler()
   let converter
 
   try {
-    errorhandler.validateInput(options.value)
+    errorhandler.validateInputUnit(options.fromUnit)
+    errorhandler.validateInputUnit(options.toUnit)
+
+    errorhandler.validateInputNumber(options.value)
 
     const fromUnit = options.fromUnit
     const toUnit = options.toUnit
@@ -87,7 +96,10 @@ function windwizard (options) {
         break
     }
 
+    return Math.round(convertedValue * 10) / 10 
+
   } catch (error) {
     console.log(error)
   }
 }
+
