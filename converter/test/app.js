@@ -13,16 +13,23 @@ const optionsTemp = {
   value: -100
 }
 
+const optionsDistance = {
+  fromUnit: 'inches',
+  toUnit: 'centimeters',
+  value: '100'
+}
+
 const convertedValueWind = wizard.wind(optionsWind)
 const convertedValueTemp = wizard.temperature(optionsTemp)
+const convertedValueDistance = wizard.distance(optionsDistance)
 
-if (convertedValueWind && convertedValueTemp) {
-  console.log('The converted value wind', convertedValueWind)
+if (convertedValueTemp) {
   console.log('The converted value temp', convertedValueTemp)
-} else if (convertedValueWind && !convertedValueTemp) {
-  console.log('The converted value wind', convertedValueWind)
-} else if (!convertedValueWind && convertedValueTemp) {
-  console.log('The converted value temp', convertedValueTemp)
-} else {
-  process.exit()
 }
+if (convertedValueWind) {
+  console.log('The converted value wind', convertedValueWind)
+}
+if (convertedValueDistance) {
+  console.log('The converted value distance', convertedValueDistance)
+}
+

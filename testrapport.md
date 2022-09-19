@@ -110,3 +110,14 @@ All units/classes converts from the value 100, i.e. Class Temperature expected/a
 | ----------- | :----: | :----: |
 |convertFromFahrenheit | 37.8 | 37.8 |
 |convertFromCelsius   | 212  | 212 |
+
+## Test results distance conversion
+
+All units/classes converts from the value 100, i.e. Class inches expected/actual value is based on 100 inches being converted etc.
+
+### Class Inch
+
+| Methodname  | Expected value | Actual value |
+| ----------- | :----: | :----: |
+|convertToCentiMeters | 254 | 254 |
+|convertToMeters   | 2.54  | 2.5 |

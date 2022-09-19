@@ -3,11 +3,15 @@
  */
 import { ErrorHandler } from './ErrorHandler.js'
 import { FeetPerSecond } from './FeetPerSecond.js'
+import { Foot } from './Foot.js'
+import { Inch } from './Inch.js'
 import { KilometerPerHour } from './KilometerPerHour.js'
 import { Knots } from './Knots.js'
 import { MeterPerSecond } from './MeterPerSecond.js'
+import { Mile } from './Mile.js'
 import { MilesPerHour } from './MilesPerHour.js'
 import { Temperature } from './Temperature.js'
+import { Yard } from './Yard.js'
 
 export default class Wizard {
   /**
@@ -25,7 +29,7 @@ export default class Wizard {
       errorHandler.validateWindUnit(options.fromUnit)
       errorHandler.validateWindUnit(options.toUnit)
 
-      errorHandler.validateTempValue(options.value)
+      errorHandler.validatePositiveValue(options.value)
 
       const fromUnit = options.fromUnit
       const toUnit = options.toUnit
@@ -118,7 +122,7 @@ export default class Wizard {
       const converter = new Temperature
 
       errorHandler.validateTempUnit(options.from)
-      errorHandler.validateTempValue(options.value)
+      errorHandler.validateValue(options.value)
 
       let convertedValue
 
@@ -134,6 +138,79 @@ export default class Wizard {
       }
 
       return Math.round(convertedValue * 10) / 10
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  /**
+   * Converts common US distance values to some metric ones.
+   *
+   * @param {*} options 
+   * @returns 
+   */
+  distance (options) {
+    const errorHandler = new ErrorHandler()
+
+    let converter
+
+    try {
+      errorHandler.validateDistanceFromUnit(options.fromUnit)
+
+      errorHandler.validatePositiveValue(options.value)
+
+      const fromUnit = options.fromUnit
+      const toUnit = options.toUnit
+      let convertedValue
+
+      switch (fromUnit) {
+        case 'inches':
+          converter = new Inch()
+          errorHandler.validateDistanceToCentimeterAndMeter(options.toUnit)
+
+          if (fromUnit === 'inches' && toUnit === 'centimeters') {
+            convertedValue = converter.convertToCentimeters(options.value)
+          } else if (fromUnit === 'inches' && toUnit === 'meters') {
+            convertedValue = converter.convertToMeters(options.value)
+          } 
+          break
+        case 'feet':
+          converter = new Foot()
+          errorHandler.validateDistanceToCentimeterAndMeter(options.toUnit)
+
+          if (fromUnit === 'feet' && toUnit === 'centimeters') {
+            convertedValue = converter.convertToCentimeters(options.value)
+          } else if (fromUnit === 'feet' && toUnit === 'meters') {
+            convertedValue = converter.convertToMeters(options.value)
+          } 
+          break
+        case 'yards':
+          converter = new Yard()
+          errorHandler.validateDistanceToMeterAndKilometer(options.toUnit)
+
+          if (fromUnit === 'yards' && toUnit === 'meters') {
+            convertedValue = converter.convertToMeters(options.value)
+          } else if (fromUnit === 'yards' && toUnit === 'kilometers') {
+            convertedValue = converter.convertToKilometers(options.value)
+          }
+          break
+        case 'miles':
+          converter = new Mile()
+          errorHandler.validateDistanceToMeterAndKilometer(options.toUnit)
+
+          if (fromUnit === 'miles' && toUnit === 'meters') {
+            convertedValue = converter.convertToMeters(options.value)
+          } else if (fromUnit === 'miles' && toUnit === 'kilometers') {
+            convertedValue = converter.convertToKilometers(options.value)
+          }
+          break
+
+        default:
+          break
+      }
+
+      return Math.round(convertedValue * 10) / 10
+
     } catch (error) {
       console.log(error)
     }

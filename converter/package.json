@@ -15,7 +15,9 @@
     "javascript",
     "wind",
     "speed",
-    "converter"
+    "converter",
+    "temperature",
+    "distance"
   ],
   "author": "Andrea Viola Caroline Åkesson",
   "license": "MIT",
