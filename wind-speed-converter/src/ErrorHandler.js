@@ -1,15 +1,8 @@
 /**
- * Class validating numbers to be converted.
+ * Class validating input to be converted.
  */
 
 export class ErrorHandler {
-  /**
-   * Instanciates an error handler.
-   */
-  constructor () {
-
-  }
-
   /**
    * Ensure that the unit is a valid unit.
    *
