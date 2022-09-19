@@ -106,7 +106,7 @@ All units/classes converts from the value 100, i.e. Class KilometerPerHour expec
 ### Class Knots
 
 | Methodname  | Expected value | Actual value |
-| ----------- | :----: | :----: | :----: |
+| ----------- | :----: | :----: |
 |convertToKilometerPerHour | 185.3 | 185.2 |
 |convertToMeterPerSecond   | 51.4  | 51.4  |
 |convertToFeetPerSecond    | 168.8 | 168.8 |
@@ -158,14 +158,14 @@ All units/classes converts from the value 100, i.e. Class inches expected/actual
 
 | Methodname  | Expected value | Actual value |
 | ----------- | :----: | :----: |
-|convertToCentiMeters | 254 | 254 |
+|convertToCentimeters | 254 | 254 |
 |convertToMeters   | 2.54  | 2.5 |
 
 ### Class Foot
 
 | Methodname  | Expected value | Actual value |
 | ----------- | :----: | :----: |
-|convertToCentiMeters | 30.5 | 30.5 |
+|convertToCentimeters | 30.5 | 30.5 |
 |convertToMeters   | 3048  | 3048 |
 
 ### Class Yard
