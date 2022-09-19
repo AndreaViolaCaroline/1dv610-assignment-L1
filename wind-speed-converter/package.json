@@ -1,5 +1,5 @@
 {
-  "name": "windwizard",
+  "name": "wizard",
   "version": "1.0.0",
   "description": "This package will make it easy to convert the following speed units: km/h, m/s, ft/s, mph, knots",
   "type": "module",

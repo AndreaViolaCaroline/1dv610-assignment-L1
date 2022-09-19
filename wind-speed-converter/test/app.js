@@ -1,4 +1,6 @@
-import windwizard from 'windwizard'
+import Wizard from 'windwizard'
+
+const wizard = new Wizard
 
 const options = {
   fromUnit: 'mph',
@@ -6,7 +8,7 @@ const options = {
   value: '100'
 }
 
-const convertedValue = windwizard(options)
+const convertedValue = wizard.wind(options)
 
 if (!convertedValue) {
   process.exit()
