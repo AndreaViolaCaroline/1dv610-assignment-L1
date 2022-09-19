@@ -7,6 +7,7 @@ import { KilometerPerHour } from './KilometerPerHour.js'
 import { Knots } from './Knots.js'
 import { MeterPerSecond } from './MeterPerSecond.js'
 import { MilesPerHour } from './MilesPerHour.js'
+import { Temperature } from './Temperature.js'
 
 export default class Wizard {
   /**
@@ -16,14 +17,15 @@ export default class Wizard {
   * @returns 
   */
   wind (options) {
-    const errorhandler = new ErrorHandler()
+    const errorHandler = new ErrorHandler()
+
     let converter
 
     try {
-      errorhandler.validateInputUnit(options.fromUnit)
-      errorhandler.validateInputUnit(options.toUnit)
+      errorHandler.validateWindUnit(options.fromUnit)
+      errorHandler.validateWindUnit(options.toUnit)
 
-      errorhandler.validateInputNumber(options.value)
+      errorHandler.validateTempValue(options.value)
 
       const fromUnit = options.fromUnit
       const toUnit = options.toUnit
@@ -103,7 +105,37 @@ export default class Wizard {
       console.log(error)
     }
   }
+
+  /**
+   * Converts fahrenheit and celsius values.
+   *
+   * @param {*} options 
+   * @returns 
+   */
+  temperature (options) {
+    try {
+      const errorHandler = new ErrorHandler()
+      const converter = new Temperature
+
+      errorHandler.validateTempUnit(options.from)
+      errorHandler.validateTempValue(options.value)
+
+      let convertedValue
+
+      switch (options.from) {
+        case 'fahrenheit':
+          convertedValue = converter.convertFromFahrenheit(options.value)
+          break
+        case 'celsius':
+          convertedValue = converter.convertFromCelsius(options.value)
+          break
+        default:
+          break;
+      }
+
+      return Math.round(convertedValue * 10) / 10
+    } catch (error) {
+      console.log(error)
+    }
+  }
 }
-
-
-

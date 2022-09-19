@@ -11,7 +11,12 @@
     "type": "git",
     "url": "git+https://github.com/AndreaViolaCaroline/1dv610-assignment-L1.git"
   },
-  "keywords": ["javascript", "wind", "speed", "converter"],
+  "keywords": [
+    "javascript",
+    "wind",
+    "speed",
+    "converter"
+  ],
   "author": "Andrea Viola Caroline Åkesson",
   "license": "MIT",
   "bugs": {

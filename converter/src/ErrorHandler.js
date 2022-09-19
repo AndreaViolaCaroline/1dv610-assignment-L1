@@ -1,27 +1,50 @@
 /**
  * Class validating input to be converted.
  */
-
 export class ErrorHandler {
   /**
-   * Ensure that the unit is a valid unit.
+   * Ensure that the temperature unit is valid.
+   */
+  validateTempUnit (unit) {
+    if (this.isEmpty(unit)) {
+      throw 'The unit is empty'
+    } else if (!this.isValidTempUnit(unit)) {
+      throw 'The unit is not a valid unit (celsius/fahrenheit)'
+    }
+  }
+
+  /**
+   * Ensure that the wind unit is a valid unit.
    *
    * @param unit - The unit to validate.
    */
-   validateInputUnit (unit) {
+   validateWindUnit (unit) {
     if (this.isEmpty(unit)) {
       throw 'The unit is empty'
-    } else if (!this.isValidUnit(unit)) {
+    } else if (!this.isValidWindUnit(unit)) {
       throw 'The unit is not a valid unit (kmh, ms, fts, mph, knots)'
     }
   }
 
   /**
-   * Ensure that input is a positive number.
+   * Ensure that temp value is a number.
    *
    * @param input - The input to validate.
    */
-  validateInputNumber (input) {
+   validateTempValue (input) {
+    if (this.isEmpty(input)) {
+      throw 'The input is empty'
+    } else if (this.isNotNumber(input)) {
+      throw 'The input is not a number'
+    }
+  }
+
+  /**
+   * Ensure that wind value is a positive number.
+   *
+   * @param input - The input to validate.
+   */
+  validateWindValue (input) {
     if (this.isEmpty(input)) {
       throw 'The input is empty'
     } else if (this.isNotNumber(input)) {
@@ -37,7 +60,19 @@ export class ErrorHandler {
    * @param unit - unit to be validated.
    * @return - True if includes a valid unit.
    */
-  isValidUnit (unit) {
+   isValidTempUnit (unit) {
+    const validUnits = ['celsius', 'fahrenheit']
+
+    return validUnits.includes(unit)
+  }
+
+  /**
+   * Is it a valid unit?
+   *
+   * @param unit - unit to be validated.
+   * @return - True if includes a valid unit.
+   */
+  isValidWindUnit (unit) {
     const validUnits = ['kmh', 'ms', 'fts', 'mph', 'knots']
 
     return validUnits.includes(unit)

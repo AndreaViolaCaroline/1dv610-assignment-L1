@@ -1,17 +1,28 @@
-import Wizard from 'windwizard'
+import Wizard from 'wizard'
 
 const wizard = new Wizard
 
-const options = {
-  fromUnit: 'mph',
+const optionsWind = {
+  fromUnit: 'kmh',
   toUnit: 'ms',
   value: '100'
 }
 
-const convertedValue = wizard.wind(options)
-
-if (!convertedValue) {
-  process.exit()
+const optionsTemp = {
+  from: 'celsius',
+  value: -100
 }
 
-console.log('The converted value', convertedValue)
+const convertedValueWind = wizard.wind(optionsWind)
+const convertedValueTemp = wizard.temperature(optionsTemp)
+
+if (convertedValueWind && convertedValueTemp) {
+  console.log('The converted value wind', convertedValueWind)
+  console.log('The converted value temp', convertedValueTemp)
+} else if (convertedValueWind && !convertedValueTemp) {
+  console.log('The converted value wind', convertedValueWind)
+} else if (!convertedValueWind && convertedValueTemp) {
+  console.log('The converted value temp', convertedValueTemp)
+} else {
+  process.exit()
+}

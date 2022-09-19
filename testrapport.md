@@ -6,14 +6,16 @@ The wind speed converter "windwizard" can convert back and forth between the uni
 
 ## How is it being tested?
 
-I created a test folder where I ran npm init and basically had a seperate javascript project. I found a command 'npm link' that was new to me (indepth info at https://docs.npmjs.com/cli/v8/commands/npm-link). Essentially, it lets you test your package without hosting it on npm first thing. Creating a symbolic link between projects in your global node modules folder on your computer, it makes it easier to develop and lets you reference your package locally!
+I created a test folder where I ran npm init and basically had a seperate javascript project. I found a command 'npm link' that was new to me (indepth info at https://docs.npmjs.com/cli/v8/commands/npm-link). Essentially, it lets you test your package without hosting it on npm first thing. Creating a symbolic link between projects in your global node modules folder on your computer, making it easier to develop and lets you reference your package locally!
 
 Inside that test folder I created a simple app.js file and simulated the windwizard being used, changing the options object and validating the calculations manually.
 
-Example:
+Example wind conversion:
 
 ```
-import  windwizard  from 'windwizard'
+import  Wizard  from 'wizard'
+
+const wizard = new Wizard
 
 const options = {
   fromUnit: 'kmh',
@@ -21,13 +23,31 @@ const options = {
   value: 100
 }
 
-const convertedValue = windwizard(options)
+const convertedValue = wizard.wind(options)
 
 console.log('The converted value', convertedValue)
 
 ```
 
-## Test results
+Example temerature conversion:
+
+```
+import  Wizard  from 'wizard'
+
+const wizard = new Wizard
+
+const options = {
+  from: 'celsius',
+  value: 100
+}
+
+const convertedValue = wizard.temperature(options)
+
+console.log('The converted value', convertedValue)
+
+```
+
+## Test results wind conversion
 
 All units/classes converts from the value 100, i.e. Class KilometerPerHour expected/actual value is based on 100kmh being converted etc.
 
@@ -76,6 +96,17 @@ All units/classes converts from the value 100, i.e. Class KilometerPerHour expec
 |convertToFeetPerSecond    | 168.8 | 168.8 |
 |convertToMilesPerHour     | 115.1 | 115.1 |
 
-## Summary
+## Summary wind conversion
 
-All methods have calculated correctly. Only knots to kmh shows a slight difference in the precision (185.3 vs. 185.2) when I look closer on the algorithm of my reference it appears to be the same as mine. However, I consider the difference to be accepted. 
+All methods have calculated correctly. Only knots to kmh shows a slight difference in the precision (185.3 vs. 185.2) when I look closer on the algorithm of my reference it appears to be the same as mine. However, I consider the difference to be accepted.
+
+## Test results temperature conversion
+
+All units/classes converts from the value 100, i.e. Class Temperature expected/actual value is based on 100 fahrenheit OR celsius being converted etc.
+
+### Class Temperature
+
+| Methodname  | Expected value | Actual value |
+| ----------- | :----: | :----: |
+|convertFromFahrenheit | 37.8 | 37.8 |
+|convertFromCelsius   | 212  | 212 |
