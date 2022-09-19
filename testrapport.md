@@ -10,7 +10,7 @@ The tests covers all units, unit per unit (see tables below) making sure all alg
 
 I created a test folder where I ran npm init and basically had a seperate javascript project. I found a command 'npm link' that was new to me (indepth info at https://docs.npmjs.com/cli/v8/commands/npm-link). Essentially, it lets you test your package without hosting it on npm first thing. Creating a symbolic link between projects in your global node modules folder on your computer, making it easier to develop and lets you reference your package locally!
 
-Inside that test folder I created a simple app.js file and simulated the windwizard being used, changing the options object and validating the calculations manually as well as trying to "ruin" the functionality by providing wrong/missing arguments.
+Inside that test folder I created a simple app.js file and simulated the wizard being used, changing the options object and validating the calculations manually as well as trying to "ruin" the functionality by providing wrong/missing arguments.
 
 Example wind conversion:
 
@@ -56,7 +56,7 @@ All units/classes converts from the value 100, i.e. Class KilometerPerHour expec
 ### Providing faulty arguments
 
 | Error  | Expected output | Actual output | Fixes |
-| ----------- | :----: | :----: |
+| ----------- | :----: | :----: | :----: |
 | Missing options object | You have to specify an options object, see README
  | You have to specify an options object, see README
  ||
@@ -109,7 +109,7 @@ All units/classes converts from the value 100, i.e. Class KilometerPerHour expec
 ### Class Knots
 
 | Methodname  | Expected value | Actual value |
-| ----------- | :----: | :----: |
+| ----------- | :----: | :----: | :----: |
 |convertToKilometerPerHour | 185.3 | 185.2 |
 |convertToMeterPerSecond   | 51.4  | 51.4  |
 |convertToFeetPerSecond    | 168.8 | 168.8 |
@@ -151,7 +151,7 @@ All units/classes converts from the value 100, i.e. Class inches expected/actual
 ### Providing faulty arguments
 
 | Error  | Expected output | Actual output | Fixes |
-| ----------- | :----: | :----: |
+| ----------- | :----: | :----: | :----: |
 | Missing options object | You have to specify an options object, see README
  | You have to specify an options object, see README
  ||
