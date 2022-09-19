@@ -137,6 +137,10 @@ All units/classes converts from the value 100, i.e. Class Temperature expected/a
 |convertFromFahrenheit | 37.8 | 37.8 |
 |convertFromCelsius   | 212  | 212 |
 
+#### Summary temperature conversion
+
+All methods have calculated correctly.
+
 ## Test results distance conversion
 
 All units/classes converts from the value 100, i.e. Class inches expected/actual value is based on 100 inches being converted etc.
@@ -181,3 +185,7 @@ All units/classes converts from the value 100, i.e. Class inches expected/actual
 | ----------- | :----: | :----: |
 |convertToMeters | 160.9 | 160.9 |
 |convertToKilometers   | 160934 | 160934.4 |
+
+#### Summary distance conversion
+
+All methods have calculated correctly. Only yards to kilometers shows a slight difference in the precision (0.09 vs. 0.1), this due to me controlling the return value to one decimal only. However, I consider the difference to be accepted.
