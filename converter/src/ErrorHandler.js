@@ -72,9 +72,9 @@ export class ErrorHandler {
    */
   validateValue (input) {
     if (this.isEmpty(input)) {
-      throw 'The input is empty'
+      throw 'The value is empty'
     } else if (this.isNotNumber(input)) {
-      throw 'The input is not a number'
+      throw 'The value is not a number'
     }
   }
 
@@ -85,9 +85,9 @@ export class ErrorHandler {
    */
   validatePositiveValue (input) {
     if (this.isEmpty(input)) {
-      throw 'The input is empty'
+      throw 'The value is empty'
     } else if (this.isNotNumber(input)) {
-      throw 'The input is not a number'
+      throw 'The value is not a number'
     } else if (!this.isPositive(input)) {
       throw 'Number must be positive'
     }

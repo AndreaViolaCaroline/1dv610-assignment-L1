@@ -3,20 +3,20 @@ import Wizard from 'wizard'
 const wizard = new Wizard
 
 const optionsWind = {
-  fromUnit: 'kmh',
-  toUnit: 'ms',
-  value: '100'
+  fromUnit: 'ms',
+  toUnit: 'kmh',
+  value: 100
 }
 
 const optionsTemp = {
-  from: 'celsius',
-  value: -100
+  from: 'fahrenheit',
+  value: '100'
 }
 
 const optionsDistance = {
-  fromUnit: 'inches',
-  toUnit: 'centimeters',
-  value: '100'
+  fromUnit: 'feet',
+  toUnit: 'meters',
+  value: 100
 }
 
 const convertedValueWind = wizard.wind(optionsWind)
@@ -32,4 +32,3 @@ if (convertedValueWind) {
 if (convertedValueDistance) {
   console.log('The converted value distance', convertedValueDistance)
 }
-

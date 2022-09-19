@@ -26,6 +26,9 @@ export default class Wizard {
     let converter
 
     try {
+      if (!options) {
+        throw 'You have to specify an options object, see README'
+      }
       errorHandler.validateWindUnit(options.fromUnit)
       errorHandler.validateWindUnit(options.toUnit)
 
@@ -121,6 +124,10 @@ export default class Wizard {
       const errorHandler = new ErrorHandler()
       const converter = new Temperature
 
+      if (!options) {
+        throw 'You have to specify an options object, see README'
+      }
+
       errorHandler.validateTempUnit(options.from)
       errorHandler.validateValue(options.value)
 
@@ -156,8 +163,11 @@ export default class Wizard {
 
     try {
       errorHandler.validateDistanceFromUnit(options.fromUnit)
-
       errorHandler.validatePositiveValue(options.value)
+
+      if (!options) {
+        throw 'You have to specify an options object, see README'
+      }
 
       const fromUnit = options.fromUnit
       const toUnit = options.toUnit
