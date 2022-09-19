@@ -143,7 +143,7 @@ All methods have calculated correctly.
 
 ## Test results distance conversion
 
-All units/classes converts from the value 100, i.e. Class inches expected/actual value is based on 100 inches being converted etc.
+All units/classes converts from the value 100, i.e. Class Inch expected/actual value is based on 100 inches being converted etc.
 
 ### Providing faulty arguments
 
