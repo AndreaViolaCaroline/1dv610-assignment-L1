@@ -2,7 +2,9 @@
 
 ## What is being tested?
 
-The wind speed converter "windwizard" can convert back and forth between the units kmh, m/s, ft/s, mph and knots. The tests covers all units, unit per unit (see tables below) making sure all algorithms are correct.
+The converter package "wizard" can convert back and forth between the wind speed units kmh, m/s, ft/s, mph and knots, the temperature units fahrenheit, celsius and also do certain conversions from common US distance units to certain metric units. 
+
+The tests covers all units, unit per unit (see tables below) making sure all algorithms are correct.
 
 ## How is it being tested?
 
