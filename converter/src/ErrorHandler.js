@@ -40,7 +40,7 @@ export class ErrorHandler {
   }
 
   /**
-   * Ensure that the distance unit is a valid unit.
+   * Ensure that the distance unit validating TO is a valid unit.
    *
    * @param unit - The unit to validate.
    */
@@ -53,7 +53,7 @@ export class ErrorHandler {
   }
 
   /**
-   * Ensure that the distance unit is a valid unit.
+   * Ensure that the distance unit validating TO is a valid unit.
    *
    * @param unit - The unit to validate.
    */
@@ -62,6 +62,32 @@ export class ErrorHandler {
       throw 'The unit is empty'
     } else if (!this.isValidDistanceToUnitMeterAndKm(unit)) {
       throw 'The unit is not a valid unit (meters, kilometers)'
+    }
+  }
+
+  /**
+   * Ensure that the weight unit is a valid unit.
+   *
+   * @param unit - The unit to validate.
+   */
+   validateWeightFromUnit (unit) {
+    if (this.isEmpty(unit)) {
+      throw 'The unit is empty'
+    } else if (!this.isValidWeightFromUnit(unit)) {
+      throw 'The unit is not a valid unit (ounces, pounds)'
+    }
+  }
+
+  /**
+   * Ensure that the weight unit is a valid unit.
+   *
+   * @param unit - The unit to validate.
+   */
+   validateWeightToUnit (unit) {
+    if (this.isEmpty(unit)) {
+      throw 'The unit is empty'
+    } else if (!this.isValidWeightToUnit(unit)) {
+      throw 'The unit is not a valid unit (grams, kilograms)'
     }
   }
 
@@ -149,6 +175,30 @@ export class ErrorHandler {
   */
    isValidDistanceToUnitMeterAndKm (unit) {
     const validUnits = ['meters', 'kilometers']
+
+    return validUnits.includes(unit)
+  }
+
+  /**
+  * Is it a valid weight unit to convert FROM?
+  *
+  * @param unit - unit to be validated.
+  * @return - True if includes a valid unit.
+  */
+   isValidWeightFromUnit (unit) {
+    const validUnits = ['ounces', 'pounds']
+
+    return validUnits.includes(unit)
+  }
+
+  /**
+  * Is it a valid weight unit to convert TO?
+  *
+  * @param unit - unit to be validated.
+  * @return - True if includes a valid unit.
+  */
+   isValidWeightToUnit (unit) {
+    const validUnits = ['grams', 'kilograms']
 
     return validUnits.includes(unit)
   }

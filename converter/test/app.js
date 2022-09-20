@@ -9,7 +9,7 @@ const optionsWind = {
 }
 
 const optionsTemp = {
-  from: 'fahrenheit',
+  fromUnit: 'fahrenheit',
   value: '100'
 }
 
@@ -19,9 +19,16 @@ const optionsDistance = {
   value: 100
 }
 
+const optionsWeight = {
+  fromUnit: 'pounds',
+  toUnit: 'kilograms',
+  value: 100
+}
+
 const convertedValueWind = wizard.wind(optionsWind)
 const convertedValueTemp = wizard.temperature(optionsTemp)
 const convertedValueDistance = wizard.distance(optionsDistance)
+const convertedValueWeight = wizard.weight(optionsWeight)
 
 if (convertedValueTemp) {
   console.log('The converted value temp', convertedValueTemp)
@@ -31,4 +38,7 @@ if (convertedValueWind) {
 }
 if (convertedValueDistance) {
   console.log('The converted value distance', convertedValueDistance)
+}
+if (convertedValueWeight) {
+  console.log('The converted value weight', convertedValueWeight)
 }

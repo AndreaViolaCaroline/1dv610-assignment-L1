@@ -10,6 +10,8 @@ import { Knots } from './Knots.js'
 import { MeterPerSecond } from './MeterPerSecond.js'
 import { Mile } from './Mile.js'
 import { MilesPerHour } from './MilesPerHour.js'
+import { Ounce } from './Ounce.js'
+import { Pound } from './Pound.js'
 import { Temperature } from './Temperature.js'
 import { Yard } from './Yard.js'
 
@@ -23,19 +25,18 @@ export default class Wizard {
   wind (options) {
     const errorHandler = new ErrorHandler()
 
-    let converter
+    if (!options) {
+      throw 'You have to specify an options object, see README'
+    }
 
-    try {
-      if (!options) {
-        throw 'You have to specify an options object, see README'
-      }
+    try {  
       errorHandler.validateWindUnit(options.fromUnit)
       errorHandler.validateWindUnit(options.toUnit)
-
       errorHandler.validatePositiveValue(options.value)
 
       const fromUnit = options.fromUnit
       const toUnit = options.toUnit
+      let converter
       let convertedValue
 
       switch (fromUnit) {
@@ -120,20 +121,21 @@ export default class Wizard {
    * @returns 
    */
   temperature (options) {
+    const errorHandler = new ErrorHandler()
+
+    if (!options) {
+      throw 'You have to specify an options object, see README'
+    }
+
     try {
-      const errorHandler = new ErrorHandler()
       const converter = new Temperature
 
-      if (!options) {
-        throw 'You have to specify an options object, see README'
-      }
-
-      errorHandler.validateTempUnit(options.from)
+      errorHandler.validateTempUnit(options.fromUnit)
       errorHandler.validateValue(options.value)
 
       let convertedValue
 
-      switch (options.from) {
+      switch (options.fromUnit) {
         case 'fahrenheit':
           convertedValue = converter.convertFromFahrenheit(options.value)
           break
@@ -151,7 +153,7 @@ export default class Wizard {
   }
 
   /**
-   * Converts common US distance values to some metric ones.
+   * Converts common US distance values to certain metric ones (see README).
    *
    * @param {*} options 
    * @returns 
@@ -159,18 +161,17 @@ export default class Wizard {
   distance (options) {
     const errorHandler = new ErrorHandler()
 
-    let converter
+    if (!options) {
+      throw 'You have to specify an options object, see README'
+    }
 
     try {
       errorHandler.validateDistanceFromUnit(options.fromUnit)
       errorHandler.validatePositiveValue(options.value)
 
-      if (!options) {
-        throw 'You have to specify an options object, see README'
-      }
-
       const fromUnit = options.fromUnit
       const toUnit = options.toUnit
+      let converter
       let convertedValue
 
       switch (fromUnit) {
@@ -182,7 +183,7 @@ export default class Wizard {
             convertedValue = converter.convertToCentimeters(options.value)
           } else if (fromUnit === 'inches' && toUnit === 'meters') {
             convertedValue = converter.convertToMeters(options.value)
-          } 
+          }
           break
         case 'feet':
           converter = new Foot()
@@ -192,7 +193,7 @@ export default class Wizard {
             convertedValue = converter.convertToCentimeters(options.value)
           } else if (fromUnit === 'feet' && toUnit === 'meters') {
             convertedValue = converter.convertToMeters(options.value)
-          } 
+          }
           break
         case 'yards':
           converter = new Yard()
@@ -221,6 +222,58 @@ export default class Wizard {
 
       return Math.round(convertedValue * 10) / 10
 
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  /**
+   * Converts ounces and pounds to milligram and kilogram values.
+   *
+   * @param {*} options 
+   * @returns 
+   */
+  weight (options) {
+    try {
+      const errorHandler = new ErrorHandler()
+
+      
+      if (!options) {
+        throw 'You have to specify an options object, see README'
+      }
+
+      errorHandler.validateWeightFromUnit(options.fromUnit)
+      errorHandler.validateWeightToUnit(options.toUnit)
+      errorHandler.validatePositiveValue(options.value)
+
+      const fromUnit = options.fromUnit
+      const toUnit = options.toUnit
+      let converter
+      let convertedValue
+
+
+      switch (fromUnit) {
+        case 'ounces':
+          converter = new Ounce()
+          if (fromUnit === 'ounces' && toUnit === 'grams') {
+            convertedValue = converter.convertToGrams(options.value)
+          } else if (fromUnit === 'ounces' && toUnit === 'kilograms') {
+            convertedValue = converter.convertToKilograms(options.value)
+          }
+          break
+        case 'pounds':
+          converter = new Pound()
+          if (fromUnit === 'pounds' && toUnit === 'grams') {
+            convertedValue = converter.convertToGrams(options.value)
+          } else if (fromUnit === 'pounds' && toUnit === 'kilograms') {
+            convertedValue = converter.convertToKilograms(options.value)
+          }
+          break
+        default:
+          break;
+      }
+
+      return Math.round(convertedValue * 10) / 10
     } catch (error) {
       console.log(error)
     }
