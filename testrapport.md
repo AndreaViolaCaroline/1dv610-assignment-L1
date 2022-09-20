@@ -189,3 +189,66 @@ All units/classes converts from the value 100, i.e. Class Inch expected/actual v
 ## Summary Distance Conversion
 
 All methods have calculated correctly. Only yards to kilometers shows a slight difference in the precision (0.09 vs. 0.1), this due to me controlling the return value to one decimal only. However, I consider the difference to be accepted.
+
+## Test results weight conversion
+
+All units/classes converts from the value 100, i.e. Class Pound expected/actual value is based on 100 pounds being converted etc.
+
+### Providing faulty arguments
+
+| Error  | Expected output | Actual output |
+| ----------- | :----: | :----: |
+| Missing options object | You have to specify an options object, see README | You have to specify an options object, see README | 
+| Missing fromUnit | 'The unit is empty' | 'The unit is empty' | 
+| Invalid fromUnit | 'The unit is not a valid unit (ounces, pounds)' | The unit is not a valid unit (ounces, pounds)' | 
+| Missing toUnit | 'The unit is empty' | 'The unit is empty' | 
+| Invalid toUnit | The unit is not a valid unit (grams, kilograms)' | The unit is not a valid unit (grams, kilograms)' | 
+| Missing value | 'The value is empty' | 'The value is empty' |  
+| Invalid value | 'The value is not a number' | 'The value is not a number' | 
+| Value is not positive | Number must be positive | Number must be positive | 
+
+### Class Ounce
+
+| Methodname  | Expected value | Actual value |
+| ----------- | :----: | :----: |
+|convertToGrams | 2835 | 2835 |
+|convertToKilograms   | 2.8 | 2.8 |
+
+### Class Pound
+
+| Methodname  | Expected value | Actual value |
+| ----------- | :----: | :----: |
+|convertToGrams | 45359.2 | 45359.2 |
+|convertToKilograms   | 45.4 | 45.4 |
+
+## Summary Weight Conversion
+
+All methods have calculated correctly. Faulty arguments has returned specific feedback.
+
+## Test results volume conversion
+
+All units/classes converts from the value 100, i.e. Class KilometerPerHour expected/actual value is based on 100kmh being converted etc.
+
+### Providing faulty arguments
+
+| Error  | Expected output | Actual output |
+| ----------- | :----: | :----: |
+| Missing options object | You have to specify an options object, see README | You have to specify an options object, see README | 
+| Missing fromUnit | 'The unit is empty' | 'The unit is empty' | 
+| Invalid fromUnit | 'The unit is not a valid unit (pints, gallons)' | The unit is not a valid unit (pints, gallons)' | 
+| Missing toUnit | 'The unit is empty' | 'The unit is empty' | 
+| Invalid toUnit | The unit is not a valid unit (litres)' | The unit is not a valid unit (litres)' | 
+| Missing value | 'The value is empty' | 'The value is empty' |  
+| Invalid value | 'The value is not a number' | 'The value is not a number' | 
+| Value is not positive | Number must be positive | Number must be positive |
+
+### Class Volume
+
+| Methodname  | Expected value | Actual value |
+| ----------- | :----: | :----: |
+|convertPintsToLitres | 47.3 | 47.3 |
+|convertGallonsToLitres   | 378.5 | 378.5 |
+
+## Summary Volume Conversion
+
+All methods have calculated correctly. Faulty arguments has returned specific feedback.

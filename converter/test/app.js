@@ -26,7 +26,7 @@ const optionsWeight = {
 }
 
 const optionsVolume = {
-  fromUnit: 'gallons',
+  fromUnit: 'pints',
   toUnit: 'litres',
   value: 100
 }
