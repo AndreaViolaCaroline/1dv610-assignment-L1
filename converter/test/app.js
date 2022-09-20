@@ -25,10 +25,17 @@ const optionsWeight = {
   value: 100
 }
 
+const optionsVolume = {
+  fromUnit: 'gallons',
+  toUnit: 'litres',
+  value: 100
+}
+
 const convertedValueWind = wizard.wind(optionsWind)
 const convertedValueTemp = wizard.temperature(optionsTemp)
 const convertedValueDistance = wizard.distance(optionsDistance)
 const convertedValueWeight = wizard.weight(optionsWeight)
+const convertedValueVolume = wizard.volume(optionsVolume)
 
 if (convertedValueTemp) {
   console.log('The converted value temp', convertedValueTemp)
@@ -41,4 +48,7 @@ if (convertedValueDistance) {
 }
 if (convertedValueWeight) {
   console.log('The converted value weight', convertedValueWeight)
+}
+if (convertedValueVolume) {
+  console.log('The converted value volume', convertedValueVolume)
 }

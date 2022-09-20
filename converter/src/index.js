@@ -13,6 +13,7 @@ import { MilesPerHour } from './MilesPerHour.js'
 import { Ounce } from './Ounce.js'
 import { Pound } from './Pound.js'
 import { Temperature } from './Temperature.js'
+import { Volume } from './Volume.js'
 import { Yard } from './Yard.js'
 
 export default class Wizard {
@@ -268,6 +269,50 @@ export default class Wizard {
           } else if (fromUnit === 'pounds' && toUnit === 'kilograms') {
             convertedValue = converter.convertToKilograms(options.value)
           }
+          break
+        default:
+          break;
+      }
+
+      return Math.round(convertedValue * 10) / 10
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  /**
+   * Converts pints and gallons to litre values.
+   *
+   * @param {*} options 
+   * @returns 
+   */
+   volume (options) {
+    try {
+      const errorHandler = new ErrorHandler()
+
+      
+      if (!options) {
+        throw 'You have to specify an options object, see README'
+      }
+
+      errorHandler.validateVolumeFromUnit(options.fromUnit)
+      errorHandler.validateVolumeToUnit(options.toUnit)
+      errorHandler.validatePositiveValue(options.value)
+
+      const fromUnit = options.fromUnit
+      const toUnit = options.toUnit
+      let converter
+      let convertedValue
+
+
+      switch (fromUnit) {
+        case 'pints':
+          converter = new Volume()
+          convertedValue = converter.convertPintsToLitres(options.value)
+          break
+        case 'gallons':
+          converter = new Volume()
+          convertedValue = converter.convertGallonsToLitres(options.value)
           break
         default:
           break;
