@@ -235,9 +235,7 @@ All units/classes converts from the value 100, i.e. Class KilometerPerHour expec
 | ----------- | :----: | :----: |
 | Missing options object | You have to specify an options object, see README | You have to specify an options object, see README | 
 | Missing fromUnit | 'The unit is empty' | 'The unit is empty' | 
-| Invalid fromUnit | 'The unit is not a valid unit (pints, gallons)' | The unit is not a valid unit (pints, gallons)' | 
-| Missing toUnit | 'The unit is empty' | 'The unit is empty' | 
-| Invalid toUnit | The unit is not a valid unit (litres)' | The unit is not a valid unit (litres)' | 
+| Invalid fromUnit | 'The unit is not a valid unit (pints, gallons)' | The unit is not a valid unit (pints, gallons)' |  
 | Missing value | 'The value is empty' | 'The value is empty' |  
 | Invalid value | 'The value is not a number' | 'The value is not a number' | 
 | Value is not positive | Number must be positive | Number must be positive |

@@ -105,19 +105,6 @@ export class ErrorHandler {
   }
 
   /**
-   * Ensure that the volume unit is a valid unit.
-   *
-   * @param unit - The unit to validate.
-   */
-   validateVolumeToUnit (unit) {
-    if (this.isEmpty(unit)) {
-      throw 'The unit is empty'
-    } else if (!this.isValidVolumeToUnit(unit)) {
-      throw 'The unit is not a valid unit (litres)'
-    }
-  }
-
-  /**
    * Ensure that temp value is a number.
    *
    * @param input - The input to validate.
@@ -237,18 +224,6 @@ export class ErrorHandler {
   */
    isValidVolumeFromUnit (unit) {
     const validUnits = ['pints', 'gallons']
-
-    return validUnits.includes(unit)
-  }
-
-  /**
-  * Is it a valid volume unit to convert TO?
-  *
-  * @param unit - unit to be validated.
-  * @return - True if includes a valid unit.
-  */
-   isValidVolumeToUnit (unit) {
-    const validUnits = ['litres']
 
     return validUnits.includes(unit)
   }

@@ -31,24 +31,28 @@ const optionsVolume = {
   value: 100
 }
 
-const convertedValueWind = wizard.wind(optionsWind)
-const convertedValueTemp = wizard.temperature(optionsTemp)
-const convertedValueDistance = wizard.distance(optionsDistance)
-const convertedValueWeight = wizard.weight(optionsWeight)
-const convertedValueVolume = wizard.volume(optionsVolume)
+try {
+  const convertedValueWind = wizard.convertWind(optionsWind)
+  const convertedValueTemp = wizard.convertTemperature(optionsTemp)
+  const convertedValueDistance = wizard.convertDistance(optionsDistance)
+  const convertedValueWeight = wizard.convertWeight(optionsWeight)
+  const convertedValueVolume = wizard.convertVolume(optionsVolume)
 
-if (convertedValueTemp) {
-  console.log('The converted value temp', convertedValueTemp)
-}
-if (convertedValueWind) {
-  console.log('The converted value wind', convertedValueWind)
-}
-if (convertedValueDistance) {
-  console.log('The converted value distance', convertedValueDistance)
-}
-if (convertedValueWeight) {
-  console.log('The converted value weight', convertedValueWeight)
-}
-if (convertedValueVolume) {
-  console.log('The converted value volume', convertedValueVolume)
+  if (convertedValueTemp) {
+    console.log('The converted value temp', convertedValueTemp)
+  }
+  if (convertedValueWind) {
+    console.log('The converted value wind', convertedValueWind)
+  }
+  if (convertedValueDistance) {
+    console.log('The converted value distance', convertedValueDistance)
+  }
+  if (convertedValueWeight) {
+    console.log('The converted value weight', convertedValueWeight)
+  }
+  if (convertedValueVolume) {
+    console.log('The converted value volume', convertedValueVolume)
+  }
+} catch (error) {
+  console.log('Something went wrong.. The error: ', error.message)
 }

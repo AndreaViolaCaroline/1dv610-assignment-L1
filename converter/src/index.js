@@ -296,11 +296,9 @@ export default class Wizard {
       }
 
       errorHandler.validateVolumeFromUnit(options.fromUnit)
-      errorHandler.validateVolumeToUnit(options.toUnit)
       errorHandler.validatePositiveValue(options.value)
 
       const fromUnit = options.fromUnit
-      const toUnit = options.toUnit
       let converter
       let convertedValue
 
