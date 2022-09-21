@@ -21,9 +21,9 @@ export default class Wizard {
   * Converts one wind speed unit to another.
   *
   * @param {Object} options 
-  * @returns - The converted value 
+  * @returns - The converted value.
   */
-  wind (options) {
+  convertWind (options) {
     const errorHandler = new ErrorHandler()
 
     if (!options) {
@@ -119,9 +119,9 @@ export default class Wizard {
    * Converts fahrenheit and celsius values.
    *
    * @param {Object} options 
-   * @returns - The converted value 
+   * @returns - The converted value.
    */
-  temperature (options) {
+  convertTemperature (options) {
     const errorHandler = new ErrorHandler()
 
     if (!options) {
@@ -157,9 +157,9 @@ export default class Wizard {
    * Converts common US distance values to certain metric ones (see README).
    *
    * @param {Object} options 
-   * @returns - The converted value 
+   * @returns - The converted value. 
    */
-  distance (options) {
+  convertDistance (options) {
     const errorHandler = new ErrorHandler()
 
     if (!options) {
@@ -232,9 +232,9 @@ export default class Wizard {
    * Converts ounces and pounds to milligram and kilogram values.
    *
    * @param {Object} options 
-   * @returns - The converted value 
+   * @returns - The converted value. 
    */
-  weight (options) {
+  convertWeight (options) {
     try {
       const errorHandler = new ErrorHandler()
 
@@ -284,9 +284,9 @@ export default class Wizard {
    * Converts pints and gallons to litre values.
    *
    * @param {Object} options 
-   * @returns - The converted value 
+   * @returns - The converted value.
    */
-   volume (options) {
+   convertVolume (options) {
     try {
       const errorHandler = new ErrorHandler()
 
