@@ -54,5 +54,5 @@ try {
     console.log('The converted value volume', convertedValueVolume)
   }
 } catch (error) {
-  console.log('Something went wrong.. The error: ', error.message)
+  console.log('Something went wrong.. The error: ', error)
 }

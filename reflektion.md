@@ -1,10 +1,8 @@
 # Reflection
 
-I am living in Mexico and this little library was inspired by a real life event amongst travellers when a hurricane was rolling in. There was a need for conversion between the wind speed units that was used by different countries to fully understand what kind of winds were to be expected. This library makes it easy to create an application that converts some of the most common units, not only regarding wind, but mainly between metric and US customary units.
+## Code quality requirements
 
-# Code quality requirements
-
-## Table of five identifiers to be examined
+### Table of five identifiers to be examined
 
 | Class/Method name & explanation | Reflection & rules from Clean Code |
 | ----------- | ----------- |
@@ -15,7 +13,7 @@ I am living in Mexico and this little library was inspired by a real life event 
 |  weight - method converting certain weight units |   "Use solution domain names" - Programmers will be using this package and it is suitable and welcomed to use solution domain names, like computer science terms and algorithm names to avoid unnecessary bothering of a customer when the programmer is not familiar with the problem domain and its terms - however - when there is not really a translation to a CS term, I'm using the problem domain name. Here weight, since it's one of the units that is handled, in fact, it even makes sense in this particular case: "code that has more to do with problem domain concepts should have problem domain names" - the weight function has to do with the concept of converting weight units which I would describe as a problem domain concept. |
 
 
-## Table of five methods to be examined
+### Table of five methods to be examined
 
 
 | Method | Amount rows | Reflection & rules from Clean Code |
@@ -25,3 +23,7 @@ I am living in Mexico and this little library was inspired by a real life event 
 |  weight  |  44   |  Common Monadic Form - "There are two very common reasons why to pass an argument to a function, either you are asking a question about it, or you are transforming it into something else" - It should be avoided to have it do both because it leads to confusion (Command Query Separation) - I would argue that I am keeping this intact by transforming the argument into something else and then returning it, but there should also be a clear distinction in the name, which there is not - am I asking a question about weight or am I changing weight? As I mentioned adding convert onto the method name would make it a verb in the other reflection section, also here adding convert could be clarifying since it implys that I am "changing" weight - rather than asking a question about it.  |
 |  validatePositiveNumber  |  8  | "Use descriptive names, what does the function do?" - This name is a little bit obscure, is it validating only positive numbers? Or does it ensure that it is a positive number? Possibly, changing the name to confirmPositiveNumber would aid, but it would also change the "one word per concept idea" in this case, since validate is used for the others.  |
 |  isNotNumber  |  3   | "Step down rule" - This regards more where the method is located in the class than the method itself (sidenote: although I did have to think because I wanted to name it isNumber to follow my other naming and have it return true if indeed it was a number, but the built in function isNaN returns true if it is NOT a number, hence.. hehe) - "code should be read top to bottom, we want every function to be followed by those at the next level of abstraction" - I had totally been thinking the opposite before reading this! It makes total sense, but I think my brain was thinking that it should be organized more as a CV - with the latest/more relevant/interesting information at the top, therefor this method, which is really low level should have been placed at the top of the file instead. |
+
+## Personal reflection
+
+I am living in Mexico and this little library was inspired by a real life event amongst travellers when a hurricane was rolling in. There was a need for conversion between the wind speed units that was used by different countries to fully understand what kind of winds were to be expected. This library makes it easy to create an application that converts some of the most common units, not only regarding wind, but mainly between metric and US customary units.

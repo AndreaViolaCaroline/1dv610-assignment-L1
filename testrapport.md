@@ -2,13 +2,13 @@
 
 ## What is being tested?
 
-The converter package "wizard" can convert back and forth between the wind speed units kmh, m/s, ft/s, mph and knots, the temperature units fahrenheit, celsius and also do certain conversions from common US distance units to certain metric units. 
+The package "wizard" can convert back and forth between the wind speed units kmh, m/s, ft/s, mph and knots, the temperature units fahrenheit, celsius, do certain conversions from common US distance units to certain metric units, convert ounces and pounds to grams/kilograms and convert pints and gallons to litres. 
 
 The tests covers all units, unit per unit (see tables below) making sure all algorithms are correct.
 
 ## How is it being tested?
 
-I created a test folder where I ran npm init and basically had a seperate javascript project. I found a command 'npm link' that was new to me (indepth info at https://docs.npmjs.com/cli/v8/commands/npm-link). Essentially, it lets you test your package without hosting it on npm first thing. Creating a symbolic link between projects in your global node modules folder on your computer, making it easier to develop and lets you reference your package locally!
+I created a test folder where I ran npm init and basically had a seperate javascript project. I found a command 'npm link' that was new to me (indepth info at https://docs.npmjs.com/cli/v8/commands/npm-link). Essentially, it lets you test your package without hosting it on npm first thing. Creating a symbolic link between projects in your global node modules folder on your computer, making it easier to develop and lets you reference your package locally! (This part will however be removed upon publishing the package on NPM)
 
 Inside that test folder I created a simple app.js file and simulated the wizard being used, changing the options object and validating the calculations manually as well as trying to "ruin" the functionality by providing wrong/missing arguments.
 
@@ -25,7 +25,7 @@ const options = {
   value: 100
 }
 
-const convertedValue = wizard.wind(options)
+const convertedValue = wizard.convertWind(options)
 
 console.log('The converted value', convertedValue)
 
@@ -39,11 +39,11 @@ import  Wizard  from 'wizard'
 const wizard = new Wizard
 
 const options = {
-  from: 'celsius',
+  fromUnit: 'celsius',
   value: 100
 }
 
-const convertedValue = wizard.temperature(options)
+const convertedValue = wizard.convertTemperature(options)
 
 console.log('The converted value', convertedValue)
 

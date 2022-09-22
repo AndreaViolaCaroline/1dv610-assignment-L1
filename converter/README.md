@@ -1,45 +1,79 @@
-# Wind Speed Converter - Wind Wizard
+# Converter - Wizard
 
-## What is Wind Wizard?
+## What is Wizard?
 
 Disclaimer: This is a student project created according to specifics by Linneaus University, Sweden.
 
-Use the Wind Wizard to convert the most common wind speed units (km/h, m/s, ft/s, mph, knots).
+Use the wizard to convert some of the most common units for wind (km/h, m/s, ft/s, mph, knots), temperature (celsius, fahrenheit), distance (inch, foot, yard, mile), weight (ounce, pound) and volume (pints, gallons).
 
-The windwizard consists of 5 classes representing wind speed units. Each class contains methods with algorithms converting that specific class's unit to any of the other four.
+The wizard has 5 available methods taking an options argument and returning the converted value as specified by the options.
+
+convertWind(options)
+convertTemperature(options)
+convertDistance(options)
+convertWeight(options)
+convertVolume(options)
+
+The wizard is not complete, meaning, it does NOT convert back and forth between all units mentioned - some only converts one way. Details per unit follows below.
 
 ## How do you install?
 
-Run `npm i windwizard`
+Run `npm i wizard`
 
 
 ## How do you use?
 
-import { windwizard } from 'windwizard'
+import { wizard } from 'wizard'
 
-The windwizard takes an options object and must include the wind unit to convert from and to, as well as the value to be converted.
+### Converting wind
+
+The wizard can convert wind speeds back AND forth between, ONLY, the following wind speed units: km/h, m/s, ft/s, mph, knots.
+
+You create an options object containing the following properties: fromUnit, toUnit and value.
+
+fromUnit - Represents the unit you wish to convert *FROM*
+toUnit - Represents the unit you wish to convert *TO*
+value - Represents the value you wish to convert
+
+```
+import  Wizard  from 'wizard'
+
+const wizard = new Wizard
 
 const options = {
-  fromUnit: 'mph',
-  toUnit: 'ms',
-  value: '100'
+  fromUnit: 'kmh',
+  toUnit: 'mph',
+  value: 100
 }
 
-windwizard(options)
+const convertedValue = wizard.convertWind(options)
 
-OR..
+console.log('The converted value', convertedValue)
 
+```
 
-windwizard({
-  fromUnit: 'kmh',
-  toUnit: 'ms',
-  value: '100'
-})
+### Converting temperature
 
-### What are the options?
+The wizard can convert temperatures back AND forth between, ONLY, the following temperature units: celsius.
 
-In the options object you specify:
+You create an options object containing the following properties: fromUnit and value.
 
-- fromUnit = String, What unit do you want to convert *FROM*? Available units are kmh, ms, fts, mph, knots - Any other value will produce an error.
-- toUnit = String, What unit do you want to conver *TO*? Available units are kmh, ms, fts, mph, knots - Any other value will produce an error.
-- value = Number, What *value* do you want to convert *FROM*? Must be digits and a number over 0 - Any other value will produce an error.
+fromUnit - Represents the unit you wish to convert *FROM*
+value - Represents the value you wish to convert
+
+```
+import  Wizard  from 'wizard'
+
+const wizard = new Wizard
+
+const options = {
+  fromUnit: 'fahrenheit',
+  value: 100
+}
+
+const convertedValue = wizard.convertTemperature(options)
+
+console.log('The converted value', convertedValue)
+
+```
+
