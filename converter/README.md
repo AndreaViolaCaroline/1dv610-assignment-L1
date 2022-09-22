@@ -6,7 +6,7 @@ Disclaimer: This is a student project created according to specifics by Linneaus
 
 Use the wizard to convert some of the most common units for wind (km/h, m/s, ft/s, mph, knots), temperature (celsius, fahrenheit), distance (inch, foot, yard, mile), weight (ounce, pound) and volume (pints, gallons).
 
-The wizard has 5 available methods taking an options argument and returning the converted value as specified by the options.
+The wizard has 5 available methods taking an options object as an argument and returning the converted value from the specified units/values in the options.
 
 * convertWind(options)
 * convertTemperature(options)
@@ -27,7 +27,7 @@ import { Wizard } from 'wizard'
 
 ### Converting wind
 
-The wizard can convert wind speeds back AND forth between, ONLY, the following wind speed units: km/h, m/s, ft/s, mph, knots.
+The wizard can convert wind speeds back AND forth between, ONLY, the following wind speed units: kmh, ms, fts, mph, knots.
 
 You create an options object containing the following properties: fromUnit, toUnit and value.
 
