@@ -12,6 +12,11 @@ I created a test folder where I ran npm init and basically had a seperate javasc
 
 Inside that test folder I created a simple app.js file and simulated the wizard being used, changing the options object and validating the calculations manually as well as trying to "ruin" the functionality by providing wrong/missing arguments.
 
+Screen shots from the testing environment:
+
+![Test folder structure](./images/local-wizard-pkg.png)
+![App.js handling the manual testing](./images/test-file-local-wizard.png)
+
 Example wind conversion:
 
 ```
