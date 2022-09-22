@@ -8,11 +8,11 @@ Use the wizard to convert some of the most common units for wind (km/h, m/s, ft/
 
 The wizard has 5 available methods taking an options argument and returning the converted value as specified by the options.
 
-convertWind(options)
-convertTemperature(options)
-convertDistance(options)
-convertWeight(options)
-convertVolume(options)
+* convertWind(options)
+* convertTemperature(options)
+* convertDistance(options)
+* convertWeight(options)
+* convertVolume(options)
 
 The wizard is not complete, meaning, it does NOT convert back and forth between all units mentioned - some only converts one way. Details per unit follows below.
 
@@ -23,7 +23,7 @@ Run `npm i wizard`
 
 ## How do you use?
 
-import { wizard } from 'wizard'
+import { Wizard } from 'wizard'
 
 ### Converting wind
 
@@ -31,9 +31,9 @@ The wizard can convert wind speeds back AND forth between, ONLY, the following w
 
 You create an options object containing the following properties: fromUnit, toUnit and value.
 
-fromUnit - Represents the unit you wish to convert *FROM*
-toUnit - Represents the unit you wish to convert *TO*
-value - Represents the value you wish to convert
+* fromUnit - Represents the unit you wish to convert *FROM*
+* toUnit - Represents the unit you wish to convert *TO*
+* value - Represents the value you wish to convert
 
 Code example:
 
@@ -60,8 +60,8 @@ The wizard can convert temperatures back AND forth between, ONLY, the following 
 
 You create an options object containing the following properties: fromUnit and value.
 
-fromUnit - Represents the unit you wish to convert *FROM*
-value - Represents the value you wish to convert
+* fromUnit - Represents the unit you wish to convert *FROM*
+* value - Represents the value you wish to convert
 
 Code example:
 
@@ -91,9 +91,9 @@ For yards and miles, the wizard can ONLY convert TO the following distance units
 
 You create an options object containing the following properties: fromUnit, toUnit and value.
 
-fromUnit - Represents the unit you wish to convert *FROM*
-toUnit - Represents the unit you wish to convert *TO*
-value - Represents the value you wish to convert
+* fromUnit - Represents the unit you wish to convert *FROM*
+* toUnit - Represents the unit you wish to convert *TO*
+* value - Represents the value you wish to convert
 
 Code example:
 
@@ -139,9 +139,9 @@ The wizard can convert weight TO, ONLY, the following weight units: grams, kilog
 
 You create an options object containing the following properties: fromUnit, toUnit and value.
 
-fromUnit - Represents the unit you wish to convert *FROM*
-toUnit - Represents the unit you wish to convert *TO*
-value - Represents the value you wish to convert
+* fromUnit - Represents the unit you wish to convert *FROM*
+* toUnit - Represents the unit you wish to convert *TO*
+* value - Represents the value you wish to convert
 
 Code example:
 
@@ -170,8 +170,8 @@ The wizard can convert volumes TO, ONLY, the following volume units: litres. Hen
 
 You create an options object containing the following properties: fromUnit and value.
 
-fromUnit - Represents the unit you wish to convert *FROM*
-value - Represents the value you wish to convert
+* fromUnit - Represents the unit you wish to convert *FROM*
+* value - Represents the value you wish to convert
 
 Code example:
 
