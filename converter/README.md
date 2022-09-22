@@ -1,12 +1,12 @@
-# Converter - Wizard
+# Wizard
 
 ## What is Wizard?
 
 Disclaimer: This is a student project created according to specifics by Linneaus University, Sweden.
 
-Use the wizard to convert some of the most common units for wind (km/h, m/s, ft/s, mph, knots), temperature (celsius, fahrenheit), distance (inch, foot, yard, mile), weight (ounce, pound) and volume (pints, gallons).
+Use the Wizard to convert some of the most common units for wind (km/h, m/s, ft/s, mph, knots), temperature (celsius, fahrenheit), distance (inch, foot, yard, mile), weight (ounce, pound) and volume (pints, gallons).
 
-The wizard has 5 available methods taking an options object as an argument and returning the converted value from the specified units/values in the options.
+The Wizard has 5 available methods taking an options object as an argument and returning the converted value from the specified units/values in the options.
 
 * convertWind(options)
 * convertTemperature(options)
@@ -14,20 +14,20 @@ The wizard has 5 available methods taking an options object as an argument and r
 * convertWeight(options)
 * convertVolume(options)
 
-The wizard is not complete, meaning, it does NOT convert back and forth between all units mentioned - some only converts one way. Details per unit follows below.
+The Wizard is not complete, meaning, it does NOT convert back and forth between all units mentioned - some only converts one way. Details per unit follows below.
 
 ## How do you install?
 
-Run `npm i wizard`
+Run `npm i @violacaroline/wizard`
 
 
 ## How do you use?
 
-import { Wizard } from 'wizard'
+import { Wizard } from '@violacaroline/wizard'
 
 ### Converting wind
 
-The wizard can convert wind speeds back AND forth between, ONLY, the following wind speed units: kmh, ms, fts, mph, knots.
+The Wizard can convert wind speeds back AND forth between, ONLY, the following wind speed units: kmh, ms, fts, mph, knots.
 
 You create an options object containing the following properties: fromUnit, toUnit and value.
 
@@ -56,7 +56,7 @@ console.log('The converted value', convertedValue)
 
 ### Converting temperature
 
-The wizard can convert temperatures back AND forth between, ONLY, the following temperature units: celsius, fahrenheit.
+The Wizard can convert temperatures back AND forth between, ONLY, the following temperature units: celsius, fahrenheit.
 
 You create an options object containing the following properties: fromUnit and value.
 
@@ -83,7 +83,7 @@ console.log('The converted value', convertedValue)
 
 ### Converting distance
 
-The wizard can convert distance FROM, ONLY, the following distance units: inches, feet, yards, miles.
+The Wizard can convert distance FROM, ONLY, the following distance units: inches, feet, yards, miles.
 
 For inches and feet, the wizard can ONLY convert TO the following distance units: centimeters, meters.
 
@@ -133,9 +133,9 @@ console.log('The converted value', convertedValue)
 
 ### Converting weight
 
-The wizard can convert weight FROM, ONLY, the following weight units: ounces, pounds.
+The Wizard can convert weight FROM, ONLY, the following weight units: ounces, pounds.
 
-The wizard can convert weight TO, ONLY, the following weight units: grams, kilograms.
+The Wizard can convert weight TO, ONLY, the following weight units: grams, kilograms.
 
 You create an options object containing the following properties: fromUnit, toUnit and value.
 
@@ -164,9 +164,9 @@ console.log('The converted value', convertedValue)
 
 ### Converting volume
 
-The wizard can convert volumes FROM, ONLY, the following volume units: pints, gallons.
+The Wizard can convert volumes FROM, ONLY, the following volume units: pints, gallons.
 
-The wizard can convert volumes TO, ONLY, the following volume units: litres. Hence, a toUnit is not specified.
+The Wizard can convert volumes TO, ONLY, the following volume units: litres. Hence, a toUnit is not specified.
 
 You create an options object containing the following properties: fromUnit and value.
 
