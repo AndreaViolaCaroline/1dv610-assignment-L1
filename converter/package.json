@@ -1,7 +1,7 @@
 {
   "name": "wizard",
   "version": "1.0.0",
-  "description": "This package will make it easy to convert the following speed units: km/h, m/s, ft/s, mph, knots",
+  "description": "This package will make it easy to do some of the most common unit conversions",
   "type": "module",
   "main": "src/index.js",
   "scripts": {
@@ -17,7 +17,9 @@
     "speed",
     "converter",
     "temperature",
-    "distance"
+    "distance",
+    "weight",
+    "volume"
   ],
   "author": "Andrea Viola Caroline Åkesson",
   "license": "MIT",

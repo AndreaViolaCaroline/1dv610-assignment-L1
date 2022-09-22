@@ -190,3 +190,11 @@ const convertedValue = wizard.convertVolume(options)
 console.log('The converted value', convertedValue)
 
 ```
+
+## Version
+
+This is version 1.0.0 of this package.
+
+## Test Report
+
+A test report is available at: https://github.com/AndreaViolaCaroline/1dv610-assignment-L1/blob/main/testrapport.md
