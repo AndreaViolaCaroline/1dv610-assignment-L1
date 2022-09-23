@@ -44,15 +44,15 @@ Screen shots from the testing environment:
 ![Test folder structure](./images/local-wizard-pkg.png)
 ![App.js handling the manual testing](./images/test-file-local-wizard.png)
 ​
-### Testfall
+## Testfall
 
 The tests covers all units, unit per unit (see tables below) making sure all algorithms are correct.
 
-## Test results wind conversion
+### Test results wind conversion
 
 All units/classes converts from the value 100, i.e. Class KilometerPerHour expected/actual value is based on 100kmh being converted etc.
 
-### Providing faulty arguments
+#### Providing faulty arguments
 
 | Error  | Expected output | Actual output | Fixes |
 | ----------- | :----: | :----: | :----: |
@@ -66,7 +66,7 @@ All units/classes converts from the value 100, i.e. Class KilometerPerHour expec
 | Value is not positive | Number must be positive | Number must be positive | |
 
 
-### Class KilometerPerHour
+#### Class KilometerPerHour
 
 | Methodname  | Expected value | Actual value |
 | ----------- | :----: | :----: |
@@ -75,7 +75,7 @@ All units/classes converts from the value 100, i.e. Class KilometerPerHour expec
 |convertToMilesPerHour   | 62.1 | 62.1 |
 |convertToKnots          | 54   | 54   |
 
-### Class MeterPerSecond
+#### Class MeterPerSecond
 
 | Methodname  | Expected value | Actual value |
 | ----------- | :----: | :----: |
@@ -84,7 +84,7 @@ All units/classes converts from the value 100, i.e. Class KilometerPerHour expec
 |convertToMilesPerHour     | 223.7 | 223.7 |
 |convertToKnots            | 194.4 | 194.4 |
 
-### Class FeetPerSecond
+#### Class FeetPerSecond
 
 | Methodname  | Expected value | Actual value |
 | ----------- | :----: | :----: |
@@ -93,7 +93,7 @@ All units/classes converts from the value 100, i.e. Class KilometerPerHour expec
 |convertToMilesPerHour     | 68.2  | 68.2 |
 |convertToKnots            | 59.2  | 59.2  |
 
-### Class MilesPerHour
+#### Class MilesPerHour
 
 | Methodname  | Expected value | Actual value |
 | ----------- | :----: | :----: |
@@ -102,7 +102,7 @@ All units/classes converts from the value 100, i.e. Class KilometerPerHour expec
 |convertToFeetPerSecond    | 146.7 | 146.7 |
 |convertToKnots            | 86.9  | 86.9  |
 
-### Class Knots
+#### Class Knots
 
 | Methodname  | Expected value | Actual value |
 | ----------- | :----: | :----: |
@@ -111,15 +111,15 @@ All units/classes converts from the value 100, i.e. Class KilometerPerHour expec
 |convertToFeetPerSecond    | 168.8 | 168.8 |
 |convertToMilesPerHour     | 115.1 | 115.1 |
 
-## Summary Wind Conversion
+**#### Summary Wind Conversion**
 
 All methods have calculated correctly. Only knots to kmh shows a slight difference in the precision (185.3 vs. 185.2) when I look closer on the algorithm of my reference it appears to be the same as mine. However, I consider the difference to be accepted.
 
-## Test results temperature conversion
+### Test results temperature conversion
 
 All units/classes converts from the value 100, i.e. Class Temperature expected/actual value is based on 100 fahrenheit OR celsius being converted etc.
 
-### Providing faulty arguments
+#### Providing faulty arguments
 
 | Error  | Expected output | Actual output | Fixes |
 | ----------- | :----: | :----: | :----: |
@@ -129,22 +129,22 @@ All units/classes converts from the value 100, i.e. Class Temperature expected/a
 | Missing value | 'The value is empty' | 'The value is empty' | |
 | Invalid value | 'The value is not a number' | 'The value is not a number' | |
 
-### Class Temperature
+#### Class Temperature
 
 | Methodname  | Expected value | Actual value |
 | ----------- | :----: | :----: |
 |convertFromFahrenheit | 37.8 | 37.8 |
 |convertFromCelsius   | 212  | 212 |
 
-## Summary Temperature Conversion
+**#### Summary Temperature Conversion**
 
 All methods have calculated correctly.
 
-## Test results distance conversion
+### Test results distance conversion
 
 All units/classes converts from the value 100, i.e. Class Inch expected/actual value is based on 100 inches being converted etc.
 
-### Providing faulty arguments
+#### Providing faulty arguments
 
 | Error  | Expected output | Actual output | Fixes |
 | ----------- | :----: | :----: | :----: |
@@ -157,43 +157,43 @@ All units/classes converts from the value 100, i.e. Class Inch expected/actual v
 | Invalid value | 'The value is not a number' | 'The value is not a number' | |
 | Value is not positive | Number must be positive | Number must be positive | |
 
-### Class Inch
+#### Class Inch
 
 | Methodname  | Expected value | Actual value |
 | ----------- | :----: | :----: |
 |convertToCentimeters | 254 | 254 |
 |convertToMeters   | 2.54  | 2.5 |
 
-### Class Foot
+#### Class Foot
 
 | Methodname  | Expected value | Actual value |
 | ----------- | :----: | :----: |
 |convertToCentimeters | 30.5 | 30.5 |
 |convertToMeters   | 3048  | 3048 |
 
-### Class Yard
+#### Class Yard
 
 | Methodname  | Expected value | Actual value |
 | ----------- | :----: | :----: |
 |convertToMeters | 91.4 | 91.4 |
 |convertToKilometers   | 0.09  | 0.1 |
 
-### Class Mile
+#### Class Mile
 
 | Methodname  | Expected value | Actual value |
 | ----------- | :----: | :----: |
 |convertToMeters | 160.9 | 160.9 |
 |convertToKilometers   | 160934 | 160934.4 |
 
-## Summary Distance Conversion
+**#### Summary Distance Conversion**
 
 All methods have calculated correctly. Only yards to kilometers shows a slight difference in the precision (0.09 vs. 0.1), this due to me controlling the return value to one decimal only. However, I consider the difference to be accepted.
 
-## Test results weight conversion
+### Test results weight conversion
 
 All units/classes converts from the value 100, i.e. Class Pound expected/actual value is based on 100 pounds being converted etc.
 
-### Providing faulty arguments
+#### Providing faulty arguments
 
 | Error  | Expected output | Actual output |
 | ----------- | :----: | :----: |
@@ -206,29 +206,29 @@ All units/classes converts from the value 100, i.e. Class Pound expected/actual 
 | Invalid value | 'The value is not a number' | 'The value is not a number' | 
 | Value is not positive | Number must be positive | Number must be positive | 
 
-### Class Ounce
+#### Class Ounce
 
 | Methodname  | Expected value | Actual value |
 | ----------- | :----: | :----: |
 |convertToGrams | 2835 | 2835 |
 |convertToKilograms   | 2.8 | 2.8 |
 
-### Class Pound
+#### Class Pound
 
 | Methodname  | Expected value | Actual value |
 | ----------- | :----: | :----: |
 |convertToGrams | 45359.2 | 45359.2 |
 |convertToKilograms   | 45.4 | 45.4 |
 
-## Summary Weight Conversion
+**#### Summary Weight Conversion**
 
 All methods have calculated correctly. Faulty arguments has returned specific feedback.
 
-## Test results volume conversion
+### Test results volume conversion
 
 All units/classes converts from the value 100, i.e. Class KilometerPerHour expected/actual value is based on 100kmh being converted etc.
 
-### Providing faulty arguments
+#### Providing faulty arguments
 
 | Error  | Expected output | Actual output |
 | ----------- | :----: | :----: |
@@ -239,14 +239,14 @@ All units/classes converts from the value 100, i.e. Class KilometerPerHour expec
 | Invalid value | 'The value is not a number' | 'The value is not a number' | 
 | Value is not positive | Number must be positive | Number must be positive |
 
-### Class Volume
+#### Class Volume
 
 | Methodname  | Expected value | Actual value |
 | ----------- | :----: | :----: |
 |convertPintsToLitres | 47.3 | 47.3 |
 |convertGallonsToLitres   | 378.5 | 378.5 |
 
-## Summary Volume Conversion
+**### Summary Volume Conversion**
 
 All methods have calculated correctly. Faulty arguments has returned specific feedback.
 ​
@@ -262,6 +262,7 @@ All methods have calculated correctly. Faulty arguments has returned specific fe
 |  wind - method converting certain wind units  | ** "Use intention revealing names"** - wind does not really imply what this function does more than that it probably has got something to do with wind. Adding convert onto the name, i.e convertWind, would 1. make the method name a verb - as is recommended in the literature and 2. say exactly what the method does - it converts wind. |
 |  temperature - method converting certain temperature units  |  **"Pick one word per concept!"** - So, if I changed the above method name to convertWind, then convert in front of all methods that convert something would make it more uniform and showing a clear concept, this package has a bunch of methods that converts stuff! |
 |  weight - method converting certain weight units |   **"Use solution domain names"** - Programmers will be using this package and it is suitable and welcomed to use solution domain names, like computer science terms and algorithm names to avoid unnecessary bothering of a customer when the programmer is not familiar with the problem domain and its terms - however - when there is not really a translation to a CS term, I'm using the problem domain name. Here weight, since it's one of the units that is handled, in fact, it even makes sense in this particular case: **"code that has more to do with problem domain concepts should have problem domain names"** - the weight function has to do with the concept of converting weight units which I would describe as a problem domain concept. |
+
 ​
 ### Funktioner
 ​
