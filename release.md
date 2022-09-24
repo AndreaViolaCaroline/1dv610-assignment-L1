@@ -29,9 +29,13 @@ Instructions on how to use my package is available at:
 * https://github.com/AndreaViolaCaroline/1dv610-assignment-L1/blob/main/converter/README.md
 ​
 ## Beskrivning av min kod
-Beskriv din kod på en hög abstraktionsnivå. En kort beskrivning av dina viktigaste klasser och metoder. Skapa gärna ett klassdiagram som bild. Använd det ni lärt er så här långt i 1dv607. Kommunicera så att jag kan förstå.
 
 The package "wizard" can convert back and forth between the wind speed units kmh, m/s, ft/s, mph and knots, the temperature units fahrenheit, celsius, do certain conversions from common US distance units to certain metric units, convert ounces and pounds to grams/kilograms and convert pints and gallons to litres.
+
+The wizard class is at the highest level of abstraction and uses all the other class for doing its calculations from the specific units specified by the options.
+
+![Domain model Wizard system](./images/domain-model-wizard.png)
+
 ​
 ## Hur jag testat
 
