@@ -111,7 +111,7 @@ All units/classes converts from the value 100, i.e. Class KilometerPerHour expec
 |convertToFeetPerSecond    | 168.8 | 168.8 |
 |convertToMilesPerHour     | 115.1 | 115.1 |
 
-**#### Summary Wind Conversion**
+#### **Summary Wind Conversion**
 
 All methods have calculated correctly. Only knots to kmh shows a slight difference in the precision (185.3 vs. 185.2) when I look closer on the algorithm of my reference it appears to be the same as mine. However, I consider the difference to be accepted.
 
@@ -136,7 +136,7 @@ All units/classes converts from the value 100, i.e. Class Temperature expected/a
 |convertFromFahrenheit | 37.8 | 37.8 |
 |convertFromCelsius   | 212  | 212 |
 
-**#### Summary Temperature Conversion**
+#### **Summary Temperature Conversion**
 
 All methods have calculated correctly.
 
@@ -185,7 +185,7 @@ All units/classes converts from the value 100, i.e. Class Inch expected/actual v
 |convertToMeters | 160.9 | 160.9 |
 |convertToKilometers   | 160934 | 160934.4 |
 
-**#### Summary Distance Conversion**
+#### **Summary Distance Conversion**
 
 All methods have calculated correctly. Only yards to kilometers shows a slight difference in the precision (0.09 vs. 0.1), this due to me controlling the return value to one decimal only. However, I consider the difference to be accepted.
 
@@ -220,7 +220,7 @@ All units/classes converts from the value 100, i.e. Class Pound expected/actual 
 |convertToGrams | 45359.2 | 45359.2 |
 |convertToKilograms   | 45.4 | 45.4 |
 
-**#### Summary Weight Conversion**
+#### **Summary Weight Conversion**
 
 All methods have calculated correctly. Faulty arguments has returned specific feedback.
 
@@ -246,7 +246,7 @@ All units/classes converts from the value 100, i.e. Class KilometerPerHour expec
 |convertPintsToLitres | 47.3 | 47.3 |
 |convertGallonsToLitres   | 378.5 | 378.5 |
 
-**### Summary Volume Conversion**
+### **Summary Volume Conversion**
 
 All methods have calculated correctly. Faulty arguments has returned specific feedback.
 ​
