@@ -20,9 +20,7 @@
     - [x] Det finns en tydlig beskrivning i hur modulen skall användas (i git)
     - [ ] Kodkvalitetskraven är varierade 
   - [ ] Jag eftersträvar med denna inlämning högsta betyg (A) 
-​
-Förtydligande: Examinator kommer sätta betyg oberoende på vad ni anser. 
-​
+​​
 ## Återanvändning
 Instructions on how to use my package is available at: 
 * https://www.npmjs.com/package/@violacaroline/wizard
@@ -42,7 +40,7 @@ The wizard class is at the highest level of abstraction and uses all the other c
 ​
 ## Hur jag testat
 
-I created a test folder where I ran npm init and basically had a seperate javascript project. I found a command 'npm link' that was new to me (indepth info at https://docs.npmjs.com/cli/v8/commands/npm-link). Essentially, it lets you test your package without hosting it on npm first thing. Creating a symbolic link between projects in your global node modules folder on your computer, making it easier to develop and lets you reference your package locally! (This part will however be removed upon publishing the package on NPM)
+I created a test folder where I ran npm init and basically had a seperate javascript project. I found a command 'npm link' that was new to me (indepth info at https://docs.npmjs.com/cli/v8/commands/npm-link). Essentially, it lets you test your package without hosting it on npm first thing. Creating a symbolic link between projects in your global node modules folder on your computer, making it easier to develop and lets you reference your package locally! (This part will however be removed upon publishing the package on NPM and later, for the actual test-app that is included it will be downloaded from NPM)
 
 Inside that test folder I created a simple app.js file and simulated the wizard being used, changing the options object and validating the calculations manually as well as trying to "ruin" the functionality by providing wrong/missing arguments.
 
@@ -54,7 +52,7 @@ Screen shots from the testing environment:
 ​
 ## Testfall
 
-The tests covers all units, unit per unit (see tables below) making sure all algorithms are correct.
+The tests covers all kinds of units, unit per unit (see tables below) making sure all algorithms are correct and that it throws correct errors upon faulty arguments.
 
 ### Test results wind conversion
 
