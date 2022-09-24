@@ -26,6 +26,9 @@ Förtydligande: Examinator kommer sätta betyg oberoende på vad ni anser.
 ## Återanvändning
 Instructions on how to use my package is available at: 
 * https://www.npmjs.com/package/@violacaroline/wizard
+
+or
+
 * https://github.com/AndreaViolaCaroline/1dv610-assignment-L1/blob/main/converter/README.md
 ​
 ## Beskrivning av min kod
@@ -46,8 +49,6 @@ Inside that test folder I created a simple app.js file and simulated the wizard 
 Screen shots from the testing environment:
 
 ![Test folder structure](./images/local-wizard-pkg.png)
-
-or
 
 ![App.js handling the manual testing](./images/test-file-local-wizard.png)
 ​
