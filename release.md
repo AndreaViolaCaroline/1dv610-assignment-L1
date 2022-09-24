@@ -46,6 +46,9 @@ Inside that test folder I created a simple app.js file and simulated the wizard 
 Screen shots from the testing environment:
 
 ![Test folder structure](./images/local-wizard-pkg.png)
+
+or
+
 ![App.js handling the manual testing](./images/test-file-local-wizard.png)
 ​
 ## Testfall
