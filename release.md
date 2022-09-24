@@ -15,7 +15,7 @@
     - [x] Kodkvaliterskraven är ifyllda
     - [x] Reflektion är skriven utifrån bokens kapitel 
   - [ ] Jag eftersträvar med denna inlämning högre betyg (C-B) och anser mig uppfylla alla extra krav för detta. 
-    - [ ] Samtliga testfall är skrivna    
+    - [x] Samtliga testfall är skrivna    
     - [ ] Testfall är automatiserade
     - [x] Det finns en tydlig beskrivning i hur modulen skall användas (i git)
     - [ ] Kodkvalitetskraven är varierade 
@@ -35,7 +35,7 @@ or
 
 The package "wizard" can convert back and forth between the wind speed units kmh, m/s, ft/s, mph and knots, the temperature units fahrenheit, celsius, do certain conversions from common US distance units to certain metric units, convert ounces and pounds to grams/kilograms and convert pints and gallons to litres.
 
-The wizard class is at the highest level of abstraction and uses all the other class for doing its calculations from the specific units specified by the options.
+The wizard class is at the highest level of abstraction and uses all the other class for doing its calculations from the specific units specified by the options. It contains the most important methods in the system, which however depends on all the other classes. It's interface has convertWind(), convertTemperature(), convertDistance(), convertWeight(), convertVolume()
 
 ![Domain model Wizard system](./images/domain-model-wizard.png)
 
@@ -285,4 +285,8 @@ All methods have calculated correctly. Faulty arguments has returned specific fe
 ## Laborationsreflektion
 Reflektera över uppgiften utifrån ett kodkvalitetsperspektiv. Använd begrepp ifrån boken.
 
-I am living in Mexico and this little library was inspired by a real life event amongst travellers when a hurricane was rolling in. There was a need for conversion between the wind speed units that was used by different countries to fully understand what kind of winds were to be expected. This library makes it easy to create an application that converts some of the most common units, not only regarding wind, but mainly between metric and US customary units.
+I am living in Mexico and this little library was inspired by a real life event amongst travellers when a hurricane was rolling in. There was a need for conversion between the wind speed units that was used by different countries to fully understand what kind of winds were to be expected. This library makes it easier to create an application that converts some of the most common units, not only regarding wind, but mainly between metric and US customary units.
+
+The biggest mistake I have made regarding this project is violations regarding DRY - Don't repeat yourself. This became especially clear to me, ofcourse, at the end and while drawing the diagram of my classes that was to be included in the release md file. At the start of pretty much every project I make it is like I find it hard to step back and really see what is needed to solve my problem, I feel stressed to start and by all means, many times for me - because of where I'm at in my development journey - it really is the best idea just to get going with something. Now in, hindsight I feel like, boy oh boy, do I have many classes with more or less the same methods! The only thing that differs is really what unit is transformed to another unit and by that, the algorithm that the methods use changes. As the book states in one of its chapters though: "First make it work - then make it right". I am not completely certain of how exactly I would improve it, but as far as I've come right now I have realized there must be a way to refactor it - I just cant wrap my head around how to do it yet.
+
+I also think a different structure of the classes in the src folder could be a good idea, as in having a folder for every unit and put the files in there. However that perhaps has more to do with "Project setup quality" than "Code quality". By having classes representing more or less all units that are being available for conversion, makes a clear distinction of what the system offers, but I also feel that it makes the project more "busy".
