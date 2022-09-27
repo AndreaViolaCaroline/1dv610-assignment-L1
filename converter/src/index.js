@@ -42,6 +42,9 @@ export default class Wizard {
       let converter
       let convertedValue
 
+
+      // BREAK OUT ALL IF STATEMENTS TO INCREASE READABILITY, MAINTAINABILITY
+      // STRUCTURE FILES, 1 FOLDER PER WIND
       switch (fromUnit) {
         case 'kmh':
           converter = new KilometerPerHour()
