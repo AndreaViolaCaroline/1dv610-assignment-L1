@@ -43,8 +43,9 @@ export default class Wizard {
       let convertedValue
       // BREAK OUT ALL IF STATEMENTS TO INCREASE READABILITY, MAINTAINABILITY
       // STRUCTURE FILES, 1 FOLDER PER WIND
+      /* MOVED THESE IF STATEMENTS INTO THEIR RESPECTIVE CLASSES SINCE THAT ON IS REALLY THE INFORMATION EXPERT FEATURE ENVY AVOIDED */
       switch (fromUnit) {
-        case 'kmh':          
+        case 'kmh':
           converter = new KilometerPerHour()
           convertedValue = converter.convertOriginalValue(fromUnit, toUnit, value)
           break
@@ -98,7 +99,7 @@ export default class Wizard {
 
       const converter = new Temperature
       let convertedValue = converter.convertOriginalValue(fromUnit, value)
-      
+
       return Math.round(convertedValue * 10) / 10
 
     } catch (error) {
@@ -126,7 +127,7 @@ export default class Wizard {
       const fromUnit = options.fromUnit
       const toUnit = options.toUnit
       const value = options.value
-  
+
       let converter
       let convertedValue
 
@@ -134,22 +135,22 @@ export default class Wizard {
         case 'inches':
           converter = new Inch()
           errorHandler.validateDistanceToCentimeterAndMeter(toUnit)
-          convertedValue = converter.convertOriginalValue(fromUnit, toUnit, value)      
+          convertedValue = converter.convertOriginalValue(fromUnit, toUnit, value)
           break
         case 'feet':
           converter = new Foot()
           errorHandler.validateDistanceToCentimeterAndMeter(toUnit)
-          convertedValue = converter.convertOriginalValue(fromUnit, toUnit, value)         
+          convertedValue = converter.convertOriginalValue(fromUnit, toUnit, value)
           break
         case 'yards':
           converter = new Yard()
           errorHandler.validateDistanceToMeterAndKilometer(toUnit)
-          convertedValue = converter.convertOriginalValue(fromUnit, toUnit, value)           
+          convertedValue = converter.convertOriginalValue(fromUnit, toUnit, value)
           break
         case 'miles':
           converter = new Mile()
           errorHandler.validateDistanceToMeterAndKilometer(toUnit)
-          convertedValue = converter.convertOriginalValue(fromUnit, toUnit, value)        
+          convertedValue = converter.convertOriginalValue(fromUnit, toUnit, value)
           break
 
         default:

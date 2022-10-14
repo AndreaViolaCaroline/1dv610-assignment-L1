@@ -11,7 +11,6 @@
    * @param {int} value
    */
    convertOriginalValue (fromUnit, toUnit, value) {
-    /* MOVED THESE IF STATEMENTS INTO THEIR RESPECTIVE CLASSES SINCE THAT ON IS REALLY THE INFORMATION EXPERT */
     let convertedValue
     if (fromUnit === 'mph' && toUnit === 'kmh') {
       convertedValue = this.convertToKilometerPerHour(value)

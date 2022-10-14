@@ -19,6 +19,7 @@ export class Pound {
 
     return convertedValue
   }
+
   /**
    * Converts value from pounds to grams.
    *
