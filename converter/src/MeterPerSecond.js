@@ -4,6 +4,24 @@
 
 export class MeterPerSecond {
   /**
+   * Converts the original value.
+   */
+  convertOriginalValue (fromUnit, toUnit, value) {
+    let convertedValue
+    if (fromUnit === 'ms' && toUnit === 'kmh') {
+      convertedValue = this.convertToKilometerPerHour(value)
+    } else if (fromUnit === 'ms' && toUnit === 'fts') {
+      convertedValue = this.convertToFeetPerSecond(value)
+    } else if (fromUnit === 'ms' && toUnit === 'mph') {
+      convertedValue = this.convertToMilesPerHour(value)
+    } else if (fromUnit === 'ms' && toUnit === 'knots') {
+      convertedValue = this.convertToKnots(value)
+    }
+
+    return convertedValue
+  }
+
+  /**
    * Converts value from meter per second to kilometer per hour.
    *
    * @param {number} ms - The ms value.

@@ -30,7 +30,7 @@ export default class Wizard {
       throw 'You have to specify an options object, see README'
     }
 
-    try {  
+    try {
       errorHandler.validateWindUnit(options.fromUnit)
       errorHandler.validateWindUnit(options.toUnit)
       errorHandler.validatePositiveValue(options.value)
@@ -41,72 +41,28 @@ export default class Wizard {
 
       let converter
       let convertedValue
-
-
       // BREAK OUT ALL IF STATEMENTS TO INCREASE READABILITY, MAINTAINABILITY
       // STRUCTURE FILES, 1 FOLDER PER WIND
       switch (fromUnit) {
-        case 'kmh':
+        case 'kmh':          
           converter = new KilometerPerHour()
-
-          if (fromUnit === 'kmh' && toUnit === 'ms') {
-            convertedValue = converter.convertToMeterPerSecond(value)
-          } else if (fromUnit === 'kmh' && toUnit === 'fts') {
-            convertedValue = converter.convertToFeetPerSecond(value)
-          } else if (fromUnit === 'kmh' && toUnit === 'mph') {
-            convertedValue = converter.convertToMilesPerHour(value)
-          } else if (fromUnit === 'kmh' && toUnit === 'knots') {
-            convertedValue = converter.convertToKnots(value)
-          }
+          convertedValue = converter.convertOriginalValue(fromUnit, toUnit, value)
           break
         case 'ms':
           converter = new MeterPerSecond()
-
-          if (fromUnit === 'ms' && toUnit === 'kmh') {
-            convertedValue = converter.convertToKilometerPerHour(value)
-          } else if (fromUnit === 'ms' && toUnit === 'fts') {
-            convertedValue = converter.convertToFeetPerSecond(value)
-          } else if (fromUnit === 'ms' && toUnit === 'mph') {
-            convertedValue = converter.convertToMilesPerHour(value)
-          } else if (fromUnit === 'ms' && toUnit === 'knots') {
-            convertedValue = converter.convertToKnots(value)
-          }
+          convertedValue = converter.convertOriginalValue(fromUnit, toUnit, value)
           break
         case 'fts':
           converter = new FeetPerSecond()
-          if (fromUnit === 'fts' && toUnit === 'kmh') {
-            convertedValue = converter.convertToKilometerPerHour(value)
-          } else if (fromUnit === 'fts' && toUnit === 'ms') {
-            convertedValue = converter.convertToMeterPerSecond(value)
-          } else if (fromUnit === 'fts' && toUnit === 'mph') {
-            convertedValue = converter.convertToMilesPerHour(value)
-          } else if (fromUnit === 'fts' && toUnit === 'knots') {
-            convertedValue = converter.convertToKnots(value)
-          }
+          convertedValue = converter.convertOriginalValue(fromUnit, toUnit, value)
           break
         case 'mph':
           converter = new MilesPerHour()
-          if (fromUnit === 'mph' && toUnit === 'kmh') {
-            convertedValue = converter.convertToKilometerPerHour(value)
-          } else if (fromUnit === 'mph' && toUnit === 'ms') {
-            convertedValue = converter.convertToMeterPerSecond(value)
-          } else if (fromUnit === 'mph' && toUnit === 'fts') {
-            convertedValue = converter.convertToFeetPerSecond(value)
-          } else if (fromUnit === 'mph' && toUnit === 'knots') {
-            convertedValue = converter.convertToKnots(value)
-          }
+          convertedValue = converter.convertOriginalValue(fromUnit, toUnit, value)
           break
         case 'knots':
           converter = new Knots()
-          if (fromUnit === 'knots' && toUnit === 'kmh') {
-            convertedValue = converter.convertToKilometerPerHour(value)
-          } else if (fromUnit === 'knots' && toUnit === 'ms') {
-            convertedValue = converter.convertToMeterPerSecond(value)
-          } else if (fromUnit === 'knots' && toUnit === 'fts') {
-            convertedValue = converter.convertToFeetPerSecond(value)
-          } else if (fromUnit === 'knots' && toUnit === 'mph') {
-            convertedValue = converter.convertToMilesPerHour(value)
-          }
+          convertedValue = converter.convertOriginalValue(fromUnit, toUnit, value)
           break
 
         default:
@@ -243,7 +199,7 @@ export default class Wizard {
     try {
       const errorHandler = new ErrorHandler()
 
-      
+
       if (!options) {
         throw 'You have to specify an options object, see README'
       }
@@ -291,11 +247,11 @@ export default class Wizard {
    * @param {Object} options 
    * @returns - The converted value.
    */
-   convertVolume (options) {
+  convertVolume (options) {
     try {
       const errorHandler = new ErrorHandler()
 
-      
+
       if (!options) {
         throw 'You have to specify an options object, see README'
       }

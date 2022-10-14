@@ -2,14 +2,37 @@
  * Class handling conversion FROM feet per second TO kmh, m/s, mph, knots.
  */
 
- export class FeetPerSecond {
+export class FeetPerSecond {
+  /**
+   * Converts the original value.
+   *
+   * @param {string} fromUnit
+   * @param {string} toUnit
+   * @param {int} value
+   */
+  convertOriginalValue (fromUnit, toUnit, value) {
+    /* MOVED THESE IF STATEMENTS INTO THEIR RESPECTIVE CLASSES SINCE THAT ON IS REALLY THE INFORMATION EXPERT */
+    let convertedValue
+    if (fromUnit === 'fts' && toUnit === 'kmh') {
+      convertedValue = this.convertToKilometerPerHour(value)
+    } else if (fromUnit === 'fts' && toUnit === 'ms') {
+      convertedValue = this.convertToMeterPerSecond(value)
+    } else if (fromUnit === 'fts' && toUnit === 'mph') {
+      convertedValue = this.convertToMilesPerHour(value)
+    } else if (fromUnit === 'fts' && toUnit === 'knots') {
+      convertedValue = this.convertToKnots(value)
+    }
+
+    return convertedValue
+  }
+
   /**
    * Converts value from feet per second to kilometer per hour.
    *
    * @param {number} fts - The feet per second value.
    * @return - The kilometer per hour value.
    */
-   convertToKilometerPerHour (fts) {
+  convertToKilometerPerHour (fts) {
     const kmPerHour = fts * 1.09728
 
     return kmPerHour
@@ -21,7 +44,7 @@
    * @param {number} fts - The feet per second value.
    * @return - The meter per second value.
    */
-   convertToMeterPerSecond (fts) {
+  convertToMeterPerSecond (fts) {
     const meterPerSecond = fts * 0.3048
 
     return meterPerSecond
@@ -33,7 +56,7 @@
    * @param {number} fts - The feet per second value.
    * @return - The miles per hour value.
    */
-   convertToMilesPerHour (fts) {
+  convertToMilesPerHour (fts) {
     const milesPerHour = fts * 0.681818
 
     return milesPerHour
@@ -45,7 +68,7 @@
    * @param {number} fts - The feet per second value.
    * @return - The knots value.
    */
-   convertToKnots (fts) {
+  convertToKnots (fts) {
     const knots = fts * 0.592484
 
     return knots

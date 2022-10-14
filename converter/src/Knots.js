@@ -4,6 +4,29 @@
 
  export class Knots {
   /**
+   * Converts the original value.
+   *
+   * @param {string} fromUnit
+   * @param {string} toUnit
+   * @param {int} value
+   */
+   convertOriginalValue (fromUnit, toUnit, value) {
+    /* MOVED THESE IF STATEMENTS INTO THEIR RESPECTIVE CLASSES SINCE THAT ON IS REALLY THE INFORMATION EXPERT */
+    let convertedValue
+    if (fromUnit === 'knots' && toUnit === 'kmh') {
+      convertedValue = this.convertToKilometerPerHour(value)
+    } else if (fromUnit === 'knots' && toUnit === 'ms') {
+      convertedValue = this.convertToMeterPerSecond(value)
+    } else if (fromUnit === 'knots' && toUnit === 'fts') {
+      convertedValue = this.convertToFeetPerSecond(value)
+    } else if (fromUnit === 'knots' && toUnit === 'mph') {
+      convertedValue = this.convertToMilesPerHour(value)
+    }
+
+    return convertedValue
+  }
+
+  /**
    * Converts value from knots to kilometer per hour.
    *
    * @param {number} knots - The knots value.

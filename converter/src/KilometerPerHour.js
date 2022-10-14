@@ -4,6 +4,29 @@
 
 export class KilometerPerHour {
   /**
+   * Converts the original value.
+   *
+   * @param {string} fromUnit
+   * @param {string} toUnit
+   * @param {int} value
+   */
+  convertOriginalValue (fromUnit, toUnit, value) {
+    /* MOVED THESE IF STATEMENTS INTO THEIR RESPECTIVE CLASSES SINCE THAT ON IS REALLY THE INFORMATION EXPERT */
+    let convertedValue 
+    if (fromUnit === 'kmh' && toUnit === 'ms') {
+      convertedValue = this.convertToMeterPerSecond(value)
+    } else if (fromUnit === 'kmh' && toUnit === 'fts') {
+      convertedValue = this.convertToFeetPerSecond(value)
+    } else if (fromUnit === 'kmh' && toUnit === 'mph') {
+      convertedValue = this.convertToMilesPerHour(value)
+    } else if (fromUnit === 'kmh' && toUnit === 'knots') {
+      convertedValue = this.convertToKnots(value)
+    }
+
+    return convertedValue
+  }
+
+  /**
    * Converts value from kilometer per hour to meter per second.
    *
    * @param {number} kmh - The kmh value.
