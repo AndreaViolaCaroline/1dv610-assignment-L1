@@ -3,6 +3,25 @@
  */
 export class Yard {
   /**
+   * Converts the original value.
+   *
+   * @param {string} fromUnit
+   * @param {string} toUnit
+   * @param {int} value
+   */
+   convertOriginalValue (fromUnit, toUnit, value) {
+    let convertedValue
+
+    if (fromUnit === 'yards' && toUnit === 'meters') {
+      convertedValue = this.convertToMeters(value)
+    } else if (fromUnit === 'yards' && toUnit === 'kilometers') {
+      convertedValue = this.convertToKilometers(value)
+    }
+
+    return convertedValue
+  }
+
+  /**
    * Converts value from yards to meters.
    *
    * @param {number} yards - The yards value.

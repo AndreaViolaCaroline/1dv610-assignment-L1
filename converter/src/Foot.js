@@ -3,6 +3,25 @@
  */
  export class Foot {
   /**
+   * Converts the original value.
+   *
+   * @param {string} fromUnit
+   * @param {string} toUnit
+   * @param {int} value
+   */
+   convertOriginalValue (fromUnit, toUnit, value) {
+    let convertedValue
+
+    if (fromUnit === 'feet' && toUnit === 'centimeters') {
+      convertedValue = this.convertToCentimeters(value)
+    } else if (fromUnit === 'feet' && toUnit === 'meters') {
+      convertedValue = this.convertToMeters(value)
+    }
+
+    return convertedValue
+  }
+
+  /**
    * Converts value from feet to centimeter.
    *
    * @param {number} feet - The feet value.

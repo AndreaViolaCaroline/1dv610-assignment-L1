@@ -90,25 +90,17 @@ export default class Wizard {
     }
 
     try {
-      const converter = new Temperature
-
       errorHandler.validateTempUnit(options.fromUnit)
       errorHandler.validateValue(options.value)
 
-      let convertedValue
+      const fromUnit = options.fromUnit
+      const value = options.value
 
-      switch (options.fromUnit) {
-        case 'fahrenheit':
-          convertedValue = converter.convertFromFahrenheit(options.value)
-          break
-        case 'celsius':
-          convertedValue = converter.convertFromCelsius(options.value)
-          break
-        default:
-          break;
-      }
-
+      const converter = new Temperature
+      let convertedValue = converter.convertOriginalValue(fromUnit, value)
+      
       return Math.round(convertedValue * 10) / 10
+
     } catch (error) {
       console.log(error)
     }
@@ -133,49 +125,31 @@ export default class Wizard {
 
       const fromUnit = options.fromUnit
       const toUnit = options.toUnit
+      const value = options.value
+  
       let converter
       let convertedValue
 
       switch (fromUnit) {
         case 'inches':
           converter = new Inch()
-          errorHandler.validateDistanceToCentimeterAndMeter(options.toUnit)
-
-          if (fromUnit === 'inches' && toUnit === 'centimeters') {
-            convertedValue = converter.convertToCentimeters(options.value)
-          } else if (fromUnit === 'inches' && toUnit === 'meters') {
-            convertedValue = converter.convertToMeters(options.value)
-          }
+          errorHandler.validateDistanceToCentimeterAndMeter(toUnit)
+          convertedValue = converter.convertOriginalValue(fromUnit, toUnit, value)      
           break
         case 'feet':
           converter = new Foot()
-          errorHandler.validateDistanceToCentimeterAndMeter(options.toUnit)
-
-          if (fromUnit === 'feet' && toUnit === 'centimeters') {
-            convertedValue = converter.convertToCentimeters(options.value)
-          } else if (fromUnit === 'feet' && toUnit === 'meters') {
-            convertedValue = converter.convertToMeters(options.value)
-          }
+          errorHandler.validateDistanceToCentimeterAndMeter(toUnit)
+          convertedValue = converter.convertOriginalValue(fromUnit, toUnit, value)         
           break
         case 'yards':
           converter = new Yard()
-          errorHandler.validateDistanceToMeterAndKilometer(options.toUnit)
-
-          if (fromUnit === 'yards' && toUnit === 'meters') {
-            convertedValue = converter.convertToMeters(options.value)
-          } else if (fromUnit === 'yards' && toUnit === 'kilometers') {
-            convertedValue = converter.convertToKilometers(options.value)
-          }
+          errorHandler.validateDistanceToMeterAndKilometer(toUnit)
+          convertedValue = converter.convertOriginalValue(fromUnit, toUnit, value)           
           break
         case 'miles':
           converter = new Mile()
-          errorHandler.validateDistanceToMeterAndKilometer(options.toUnit)
-
-          if (fromUnit === 'miles' && toUnit === 'meters') {
-            convertedValue = converter.convertToMeters(options.value)
-          } else if (fromUnit === 'miles' && toUnit === 'kilometers') {
-            convertedValue = converter.convertToKilometers(options.value)
-          }
+          errorHandler.validateDistanceToMeterAndKilometer(toUnit)
+          convertedValue = converter.convertOriginalValue(fromUnit, toUnit, value)        
           break
 
         default:
@@ -210,32 +184,26 @@ export default class Wizard {
 
       const fromUnit = options.fromUnit
       const toUnit = options.toUnit
+      const value = options.value
+
       let converter
       let convertedValue
-
 
       switch (fromUnit) {
         case 'ounces':
           converter = new Ounce()
-          if (fromUnit === 'ounces' && toUnit === 'grams') {
-            convertedValue = converter.convertToGrams(options.value)
-          } else if (fromUnit === 'ounces' && toUnit === 'kilograms') {
-            convertedValue = converter.convertToKilograms(options.value)
-          }
+          convertedValue = converter.convertOriginalValue(fromUnit, toUnit, value)
           break
         case 'pounds':
           converter = new Pound()
-          if (fromUnit === 'pounds' && toUnit === 'grams') {
-            convertedValue = converter.convertToGrams(options.value)
-          } else if (fromUnit === 'pounds' && toUnit === 'kilograms') {
-            convertedValue = converter.convertToKilograms(options.value)
-          }
+          convertedValue = converter.convertOriginalValue(fromUnit, toUnit, value)
           break
         default:
           break;
       }
 
       return Math.round(convertedValue * 10) / 10
+
     } catch (error) {
       console.log(error)
     }
@@ -251,7 +219,6 @@ export default class Wizard {
     try {
       const errorHandler = new ErrorHandler()
 
-
       if (!options) {
         throw 'You have to specify an options object, see README'
       }
@@ -260,24 +227,13 @@ export default class Wizard {
       errorHandler.validatePositiveValue(options.value)
 
       const fromUnit = options.fromUnit
-      let converter
-      let convertedValue
+      const value = options.value
 
-
-      switch (fromUnit) {
-        case 'pints':
-          converter = new Volume()
-          convertedValue = converter.convertPintsToLitres(options.value)
-          break
-        case 'gallons':
-          converter = new Volume()
-          convertedValue = converter.convertGallonsToLitres(options.value)
-          break
-        default:
-          break;
-      }
+      let converter = new Volume()
+      let convertedValue = converter.convertOriginalValue(fromUnit, value)
 
       return Math.round(convertedValue * 10) / 10
+
     } catch (error) {
       console.log(error)
     }
