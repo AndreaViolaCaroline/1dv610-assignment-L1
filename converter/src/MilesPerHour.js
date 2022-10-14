@@ -18,7 +18,7 @@
     } else if (fromUnit === 'mph' && toUnit === 'ms') {
       convertedValue = this.convertToMeterPerSecond(value)
     } else if (fromUnit === 'mph' && toUnit === 'fts') {
-      convertedValue = this.convertToMilesPerHour(value)
+      convertedValue = this.convertToFeetPerSecond(value)
     } else if (fromUnit === 'mph' && toUnit === 'knots') {
       convertedValue = this.convertToKnots(value)
     }
