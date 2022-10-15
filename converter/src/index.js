@@ -2,19 +2,19 @@
  * Main entry point package.
  */
 import { ErrorHandler } from './ErrorHandler.js'
-import { FeetPerSecond } from './FeetPerSecond.js'
-import { Foot } from './Foot.js'
-import { Inch } from './Inch.js'
-import { KilometerPerHour } from './KilometerPerHour.js'
-import { Knots } from './Knots.js'
-import { MeterPerSecond } from './MeterPerSecond.js'
-import { Mile } from './Mile.js'
-import { MilesPerHour } from './MilesPerHour.js'
-import { Ounce } from './Ounce.js'
-import { Pound } from './Pound.js'
-import { Temperature } from './Temperature.js'
-import { Volume } from './Volume.js'
-import { Yard } from './Yard.js'
+import { FeetPerSecond } from './wind/FeetPerSecond.js'
+import { Foot } from './distance/Foot.js'
+import { Inch } from './distance/Inch.js'
+import { KilometerPerHour } from './wind/KilometerPerHour.js'
+import { Knots } from './wind/Knots.js'
+import { MeterPerSecond } from './wind/MeterPerSecond.js'
+import { Mile } from './distance/Mile.js'
+import { MilesPerHour } from './wind/MilesPerHour.js'
+import { Ounce } from './weight/Ounce.js'
+import { Pound } from './weight/Pound.js'
+import { Temperature } from './temperature/Temperature.js'
+import { Volume } from './volume/Volume.js'
+import { Yard } from './distance/Yard.js'
 
 export default class Wizard {
   /**
