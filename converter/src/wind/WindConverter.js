@@ -12,7 +12,7 @@ export class WindConverter {
   /**
    * Gets correct converter and convert value.
    *
-   * @param - An options object with the units and value to convert.
+   * @param options - An options object with the units and value to convert.
    * @return - The converted value.
    */
   convertValue (options) {
@@ -25,23 +25,23 @@ export class WindConverter {
 
     switch (fromUnit) {
       case 'kmh':
-        let kilometerConverter = new KilometerPerHour()
+        const kilometerConverter = new KilometerPerHour()
         convertedValue = kilometerConverter.convertOriginalValue(fromUnit, toUnit, value)
         break
       case 'ms':
-        let meterPerSecondConverter = new MeterPerSecond()
+        const meterPerSecondConverter = new MeterPerSecond()
         convertedValue = meterPerSecondConverter.convertOriginalValue(fromUnit, toUnit, value)
         break
       case 'fts':
-        let feetPerSecondConverter = new FeetPerSecond()
+        const feetPerSecondConverter = new FeetPerSecond()
         convertedValue = feetPerSecondConverter.convertOriginalValue(fromUnit, toUnit, value)
         break
       case 'mph':
-        let milesPerHourConverter = new MilesPerHour()
+        const milesPerHourConverter = new MilesPerHour()
         convertedValue = milesPerHourConverter.convertOriginalValue(fromUnit, toUnit, value)
         break
       case 'knots':
-        let knotsConverter = new Knots()
+        const knotsConverter = new Knots()
         convertedValue = knotsConverter.convertOriginalValue(fromUnit, toUnit, value)
         break
 
