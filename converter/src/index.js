@@ -2,19 +2,20 @@
  * Main entry point package.
  */
 import { ErrorHandler } from './ErrorHandler.js'
-import { FeetPerSecond } from './wind/FeetPerSecond.js'
+// import { FeetPerSecond } from './wind/FeetPerSecond.js'
 import { Foot } from './distance/Foot.js'
 import { Inch } from './distance/Inch.js'
-import { KilometerPerHour } from './wind/KilometerPerHour.js'
-import { Knots } from './wind/Knots.js'
-import { MeterPerSecond } from './wind/MeterPerSecond.js'
+// import { KilometerPerHour } from './wind/KilometerPerHour.js'
+// import { Knots } from './wind/Knots.js'
+// import { MeterPerSecond } from './wind/MeterPerSecond.js'
 import { Mile } from './distance/Mile.js'
-import { MilesPerHour } from './wind/MilesPerHour.js'
+// import { MilesPerHour } from './wind/MilesPerHour.js'
 import { Ounce } from './weight/Ounce.js'
 import { Pound } from './weight/Pound.js'
 import { Temperature } from './temperature/Temperature.js'
 import { Volume } from './volume/Volume.js'
 import { Yard } from './distance/Yard.js'
+import { WindConverter } from './wind/WindConverter.js'
 
 export default class Wizard {
   /**
@@ -24,57 +25,13 @@ export default class Wizard {
   * @returns - The converted value.
   */
   convertWind (options) {
-    const errorHandler = new ErrorHandler()
+    /* BREAK OUT ALL IF STATEMENTS TO INCREASE READABILITY, MAINTAINABILITY, STRUCTURE FILES, 1 FOLDER PER WIND
+       MOVED THESE IF STATEMENTS INTO THEIR RESPECTIVE CLASSES SINCE THAT ON IS REALLY THE INFORMATION EXPERT FEATURE ENVY AVOIDED */
+    const windConverter = new WindConverter()
 
-    if (!options) {
-      throw 'You have to specify an options object, see README'
-    }
+    let convertedValue = windConverter.convertValue(options)
 
-    try {
-      errorHandler.validateWindUnit(options.fromUnit)
-      errorHandler.validateWindUnit(options.toUnit)
-      errorHandler.validatePositiveValue(options.value)
-
-      const fromUnit = options.fromUnit
-      const toUnit = options.toUnit
-      const value = options.value
-
-      let converter
-      let convertedValue
-      // BREAK OUT ALL IF STATEMENTS TO INCREASE READABILITY, MAINTAINABILITY
-      // STRUCTURE FILES, 1 FOLDER PER WIND
-      /* MOVED THESE IF STATEMENTS INTO THEIR RESPECTIVE CLASSES SINCE THAT ON IS REALLY THE INFORMATION EXPERT FEATURE ENVY AVOIDED */
-      switch (fromUnit) {
-        case 'kmh':
-          converter = new KilometerPerHour()
-          convertedValue = converter.convertOriginalValue(fromUnit, toUnit, value)
-          break
-        case 'ms':
-          converter = new MeterPerSecond()
-          convertedValue = converter.convertOriginalValue(fromUnit, toUnit, value)
-          break
-        case 'fts':
-          converter = new FeetPerSecond()
-          convertedValue = converter.convertOriginalValue(fromUnit, toUnit, value)
-          break
-        case 'mph':
-          converter = new MilesPerHour()
-          convertedValue = converter.convertOriginalValue(fromUnit, toUnit, value)
-          break
-        case 'knots':
-          converter = new Knots()
-          convertedValue = converter.convertOriginalValue(fromUnit, toUnit, value)
-          break
-
-        default:
-          break
-      }
-
-      return Math.round(convertedValue * 10) / 10
-
-    } catch (error) {
-      console.log(error)
-    }
+    return convertedValue
   }
 
   /**
