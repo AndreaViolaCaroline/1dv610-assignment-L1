@@ -23,6 +23,8 @@ export class WindConverter {
     const toUnit = options.toUnit
     const value = options.value
 
+    let convertedValue
+
     switch (fromUnit) {
       case 'kmh':
         const kilometerConverter = new KilometerPerHour()
