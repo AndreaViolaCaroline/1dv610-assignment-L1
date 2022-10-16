@@ -1,6 +1,6 @@
 import { ErrorHandler } from '../ErrorHandler.js'
-import { Ounce } from './weight/Ounce.js'
-import { Pound } from './weight/Pound.js'
+import { Ounce } from './Ounce.js'
+import { Pound } from './Pound.js'
 
 /**
  * Class handling conversion of weight.

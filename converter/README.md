@@ -23,7 +23,7 @@ Run `npm i @violacaroline/wizard`
 
 ## How do you use?
 
-import { Wizard } from '@violacaroline/wizard'
+import Wizard from '@violacaroline/wizard'
 
 ### Converting wind
 
@@ -38,9 +38,9 @@ You create an options object containing the following properties: fromUnit, toUn
 Code example:
 
 ```
-import  Wizard  from 'wizard'
+import Wizard from '@violacaroline/wizard'
 
-const wizard = new Wizard
+const wizard = new Wizard()
 
 const options = {
   fromUnit: 'kmh',
@@ -66,9 +66,9 @@ You create an options object containing the following properties: fromUnit and v
 Code example:
 
 ```
-import  Wizard  from 'wizard'
+import Wizard from '@violacaroline/wizard'
 
-const wizard = new Wizard
+const wizard = new Wizard()
 
 const options = {
   fromUnit: 'fahrenheit',
@@ -98,9 +98,9 @@ You create an options object containing the following properties: fromUnit, toUn
 Code example:
 
 ```
-import  Wizard  from 'wizard'
+import Wizard from '@violacaroline/wizard'
 
-const wizard = new Wizard
+const wizard = new Wizard()
 
 const options = {
   fromUnit: 'feet',
@@ -115,9 +115,9 @@ console.log('The converted value', convertedValue)
 ```
 
 ```
-import  Wizard  from 'wizard'
+import Wizard from '@violacaroline/wizard'
 
-const wizard = new Wizard
+const wizard = new Wizard()
 
 const options = {
   fromUnit: 'yards',
@@ -146,9 +146,9 @@ You create an options object containing the following properties: fromUnit, toUn
 Code example:
 
 ```
-import  Wizard  from 'wizard'
+import Wizard from '@violacaroline/wizard'
 
-const wizard = new Wizard
+const wizard = new Wizard()
 
 const options = {
   fromUnit: 'pounds',
@@ -176,9 +176,9 @@ You create an options object containing the following properties: fromUnit and v
 Code example:
 
 ```
-import  Wizard  from 'wizard'
+import Wizard from '@violacaroline/wizard'
 
-const wizard = new Wizard
+const wizard = new Wizard()
 
 const options = {
   fromUnit: 'gallons',
@@ -193,7 +193,7 @@ console.log('The converted value', convertedValue)
 
 ## Version
 
-This is version 1.0.1 of this package.
+This is version 2.0.1 of this package.
 
 ## Test Report
 
