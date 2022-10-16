@@ -15,8 +15,6 @@ export default class Wizard {
   * @returns - The converted value.
   */
   convertWind (options) {
-    /* BREAK OUT ALL IF STATEMENTS TO INCREASE READABILITY, MAINTAINABILITY, STRUCTURE FILES, 1 FOLDER PER WIND
-       MOVED THESE IF STATEMENTS INTO THEIR RESPECTIVE CLASSES SINCE THAT ON IS REALLY THE INFORMATION EXPERT FEATURE ENVY AVOIDED, CREATED A WINDCONVERTER CLASS THAT HOLDS ALL WIND RELATED FILES AND DOES CONVERSION */
     const windConverter = new WindConverter()
 
     const convertedValue = windConverter.convertValue(options)
