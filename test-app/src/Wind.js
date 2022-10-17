@@ -11,17 +11,26 @@ export class Wind {
   }
 
   convertWindUnitValue (fromInput, toInput, valueInput) {
+    try {
+      const options = {
+        fromUnit: fromInput,
+        toUnit: toInput,
+        value: valueInput
+      }
 
-    const options = {
-      fromUnit: fromInput,
-      toUnit: toInput,
-      value: valueInput
-    }
+      this.convertedValue = this.wizard.convertWind(options)
 
-    this.convertedValue = this.wizard.convertWind(options)
+      if (this.convertedValue) {
+        console.log('Yay, converted value is: ', this.convertedValue)
+      }
 
-    if (this.convertedValue) {
-      console.log('Yay, converted value is: ', this.convertedValue)
+    } catch (error) {
+      if (error instanceof Error) {
+        console.log('This is a generic error', error.message)
+      } else {
+        console.log(error.getErrorInfo())
+        // console.log('This is a unit error', error.getErrorInfo())
+      }
     }
   }
 
