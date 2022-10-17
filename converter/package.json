@@ -1,6 +1,6 @@
 {
   "name": "@violacaroline/wizard",
-  "version": "3.0.5",
+  "version": "3.0.6",
   "description": "This package will make it easy to do some of the most common unit conversions",
   "type": "module",
   "main": "src/index.js",
