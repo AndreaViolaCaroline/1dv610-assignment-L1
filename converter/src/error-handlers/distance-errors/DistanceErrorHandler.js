@@ -35,7 +35,7 @@ export class DistanceErrorHandler {
    * @param unit - The unit to validate.
    */
   validateDistanceToMeterAndKilometer (unit) {
-    if (!this.isValidDistanceToUnitCmAndM(unit)) {
+    if (!this.isValidDistanceToUnitMeterAndKm(unit)) {
       const distanceError = new DistanceError()
       distanceError.setErrorInfo('The unit is not a valid TO unit (meters, kilometers)')
       throw distanceError
