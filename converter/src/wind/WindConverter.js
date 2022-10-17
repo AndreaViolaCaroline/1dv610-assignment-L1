@@ -66,7 +66,7 @@ export class WindConverter {
       throw new Error('You have to specify an options object, see README')
     }
     errorHandler.validatePositiveValue(options.value)
-    errorHandler.isIdentical(options.fromUnit, options.toUnit)
+    errorHandler.isIdenticalUnit(options.fromUnit, options.toUnit)
     Object.values(options).forEach(value => {
       errorHandler.isEmpty(value)
     })
