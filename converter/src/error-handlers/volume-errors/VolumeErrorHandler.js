@@ -11,7 +11,7 @@ export class VolumeErrorHandler {
   validateVolumeFromUnit (unit) {
     if (!this.isValidVolumeFromUnit(unit)) {
       const volumeError = new VolumeError()
-      volumeError.setErrorInfo('The unit is not a valid unit (ounces, pounds)')
+      volumeError.setErrorInfo('The unit is not a valid FROM unit (ounces, pounds)')
       throw volumeError
     }
   }
@@ -24,7 +24,7 @@ export class VolumeErrorHandler {
    validateVolumeToUnit (unit) {
     if (!this.isValidVolumeToUnit(unit)) {
       const volumeError = new VolumeError()
-      volumeError.setErrorInfo('The unit is not a valid unit (litres)')
+      volumeError.setErrorInfo('The unit is not a valid TO unit (litres)')
       throw volumeError
     }
   }

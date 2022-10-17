@@ -11,7 +11,7 @@ export class DistanceErrorHandler {
   validateDistanceFromUnit (unit) {
     if (!this.isValidDistanceFromUnit(unit)) {
       const distanceError = new DistanceError()
-      distanceError.setErrorInfo('The unit is not a valid unit (inches, feet, yards, miles)')
+      distanceError.setErrorInfo('The unit is not a valid FROM unit (inches, feet, yards, miles)')
       throw distanceError
     }
   }
@@ -24,7 +24,7 @@ export class DistanceErrorHandler {
   validateDistanceToCentimeterAndMeter (unit) {
     if (!this.isValidDistanceToUnitCmAndM(unit)) {
       const distanceError = new DistanceError()
-      distanceError.setErrorInfo('The unit is not a valid unit (centimeters, meters)')
+      distanceError.setErrorInfo('The unit is not a valid TO unit (centimeters, meters)')
       throw distanceError
     }
   }
@@ -37,7 +37,7 @@ export class DistanceErrorHandler {
   validateDistanceToMeterAndKilometer (unit) {
     if (!this.isValidDistanceToUnitCmAndM(unit)) {
       const distanceError = new DistanceError()
-      distanceError.setErrorInfo('The unit is not a valid unit (meters, kilometers)')
+      distanceError.setErrorInfo('The unit is not a valid TO unit (meters, kilometers)')
       throw distanceError
     }
   }

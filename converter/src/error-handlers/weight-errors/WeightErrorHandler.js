@@ -11,7 +11,7 @@ export class WeightErrorHandler {
   validateWeightFromUnit (unit) {
     if (!this.isValidWeightFromUnit(unit)) {
       const weightError = new WeightError()
-      weightError.setErrorInfo('The unit is not a valid unit (ounces, pounds)')
+      weightError.setErrorInfo('The unit is not a valid FROM unit (ounces, pounds)')
       throw weightError
     }
   }
@@ -24,7 +24,7 @@ export class WeightErrorHandler {
   validateWeightToUnit (unit) {
     if (!this.isValidWeightToUnit(unit)) {
       const weightError = new WeightError()
-      weightError.setErrorInfo('The unit is not a valid unit (grams, kilograms)')
+      weightError.setErrorInfo('The unit is not a valid TO unit (grams, kilograms)')
       throw weightError
     }
   }
