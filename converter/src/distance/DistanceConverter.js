@@ -1,4 +1,5 @@
-import { ErrorHandler } from '../ErrorHandler.js'
+import { ErrorHandler } from '../error-handlers/ErrorHandler.js'
+import { DistanceErrorHandler } from '../error-handlers/distance-errors/DistanceErrorHandler.js.js'
 import { Foot } from './Foot.js'
 import { Inch } from './Inch.js'
 import { Yard } from './Yard.js'
@@ -8,6 +9,8 @@ import { Mile } from './Mile.js'
  * Class handling conversion of distance.
  */
 export class DistanceConverter {
+  #distanceErrorHandler = new DistanceErrorHandler()
+
   /**
    * Gets correct converter and convert value.
    *
@@ -27,22 +30,22 @@ export class DistanceConverter {
     switch (fromUnit) {
       case 'inches':
         const inchConverter = new Inch()
-        errorHandler.validateDistanceToCentimeterAndMeter(toUnit)
+        this.#distanceErrorHandler.validateDistanceToCentimeterAndMeter(toUnit)
         convertedValue = inchConverter.convertOriginalValue(fromUnit, toUnit, value)
         break
       case 'feet':
         const feetConverter = new Foot()
-        errorHandler.validateDistanceToCentimeterAndMeter(toUnit)
+        this.#distanceErrorHandler.validateDistanceToCentimeterAndMeter(toUnit)
         convertedValue = feetConverter.convertOriginalValue(fromUnit, toUnit, value)
         break
       case 'yards':
         const yardConverter = new Yard()
-        errorHandler.validateDistanceToMeterAndKilometer(toUnit)
+        this.#distanceErrorHandler.validateDistanceToMeterAndKilometer(toUnit)
         convertedValue = yardConverter.convertOriginalValue(fromUnit, toUnit, value)
         break
       case 'miles':
         const milesConverter = new Mile()
-        errorHandler.validateDistanceToMeterAndKilometer(toUnit)
+        this.#distanceErrorHandler.validateDistanceToMeterAndKilometer(toUnit)
         convertedValue = milesConverter.convertOriginalValue(fromUnit, toUnit, value)
         break
 
@@ -56,19 +59,19 @@ export class DistanceConverter {
   /**
    * Handles weight conversion errors.
    *
-   * @param errorHandler - The error handler object.
+   * @param errorHandler - The generic error handler object.
    * @param options - The options object to validate.
    */
   validateDistanceConversion (errorHandler, options) {
-    try {
-      if (!options) {
-        throw 'You have to specify an options object, see README'
-      }
-
-      errorHandler.validateDistanceFromUnit(options.fromUnit)
-      errorHandler.validatePositiveValue(options.value)
-    } catch (error) {
-
+    if (!options) {
+      throw 'You have to specify an options object, see README'
     }
+
+    Object.values(options).forEach(value => {
+      errorHandler.isEmpty(value)
+    })
+    errorHandler.validatePositiveValue(options.value)
+
+    this.#distanceErrorHandler.validateDistanceFromUnit(options.fromUnit)
   }
 }

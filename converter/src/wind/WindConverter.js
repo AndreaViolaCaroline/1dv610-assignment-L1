@@ -3,7 +3,8 @@ import { MeterPerSecond } from './MeterPerSecond.js'
 import { FeetPerSecond } from './FeetPerSecond.js'
 import { MilesPerHour } from './MilesPerHour.js'
 import { Knots } from './Knots.js'
-import { ErrorHandler } from '../ErrorHandler.js'
+import { WindErrorHandler } from '../error-handlers/wind-errors/WindErrorHandler.js'
+import { ErrorHandler } from '../error-handlers/ErrorHandler.js'
 
 /**
  * Class handling conversion of wind.
@@ -57,20 +58,21 @@ export class WindConverter {
   /**
    * Handles wind conversion errors.
    *
-   * @param errorHandler - The error handler object.
+   * @param errorHandler - The generic error handler object.
    * @param options - The options object to validate.
    */
   validateWindConversion (errorHandler, options) {
-    try {
-      if (!options) {
-        throw 'You have to specify an options object, see README'
-      }
-
-      errorHandler.validateWindUnit(options.fromUnit)
-      errorHandler.validateWindUnit(options.toUnit)
-      errorHandler.validatePositiveValue(options.value)
-    } catch (error) {
-      console.log(error)
+    if (!options) {
+      throw 'You have to specify an options object, see README'
     }
+
+    errorHandler.validatePositiveValue(options.value)
+    Object.values(options).forEach(value => {
+      errorHandler.isEmpty(value)
+    })
+
+    const windErrorHandler = new WindErrorHandler()
+    windErrorHandler.validateWindUnit(options.fromUnit)
+    windErrorHandler.validateWindUnit(options.toUnit)
   }
 }

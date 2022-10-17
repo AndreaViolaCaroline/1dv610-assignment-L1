@@ -1,5 +1,6 @@
 import { Temperature } from './Temperature.js'
-import { ErrorHandler } from '../ErrorHandler.js'
+import { TempErrorHandler } from '../error-handlers/TempErrorHandler.js.js'
+import { ErrorHandler } from '../error-handlers/ErrorHandler.js'
 
 /**
  * Class handling conversion of temperature.
@@ -27,20 +28,20 @@ export class TemperatureConverter {
   /**
    * Handles temperature conversion errors.
    *
-   * @param errorHandler - The error handler object.
+   * @param errorHandler - The generic error handler object.
    * @param options - The options object to validate.
    */
   validateTemperatureConversion (errorHandler, options) {
-    try {
-      if (!options) {
-        throw 'You have to specify an options object, see README'
-      }
-
-      errorHandler.validateTempUnit(options.fromUnit)
-      errorHandler.validateValue(options.value)
-
-    } catch (error) {
-
+    if (!options) {
+      throw 'You have to specify an options object, see README'
     }
+
+    Object.values(options).forEach(value => {
+      errorHandler.isEmpty(value)
+    })
+    errorHandler.validateValue(options.value)
+
+    const tempErrorHandler = new TempErrorHandler()
+    tempErrorHandler.validateTempUnit(options.fromUnit)
   }
 }

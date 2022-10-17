@@ -1,4 +1,5 @@
-import { ErrorHandler } from '../ErrorHandler.js'
+import { ErrorHandler } from '../error-handlers/ErrorHandler.js'
+import { VolumeErrorHandler } from '../error-handlers/volume-errors/VolumeErrorHandler.js.js'
 import { Volume } from './Volume.js'
 
 /**
@@ -27,19 +28,17 @@ export class VolumeConverter {
   /**
    * Handles volume conversion errors.
    *
-   * @param errorHandler - The error handler object.
+   * @param errorHandler - The generic error handler object.
    * @param options - The options object to validate.
    */
   validateVolumeConversion (errorHandler, options) {
-    try {
-      if (!options) {
-        throw 'You have to specify an options object, see README'
-      }
-
-      errorHandler.validateVolumeFromUnit(options.fromUnit)
-      errorHandler.validatePositiveValue(options.value)
-    } catch (error) {
-
+    if (!options) {
+      throw 'You have to specify an options object, see README'
     }
+    errorHandler.validatePositiveValue(options.value)
+
+    const volumeErrorHandler = new VolumeErrorHandler()
+    volumeErrorHandler.validateVolumeFromUnit(options.fromUnit)
+    volumeErrorHandler.validateVolumeToUnit(options.toUnit)
   }
 }

@@ -1,4 +1,5 @@
-import { ErrorHandler } from '../ErrorHandler.js'
+import { ErrorHandler } from '../error-handlers/ErrorHandler.js'
+import { WeightErrorHandler } from '../error-handlers/weight-errors/WeightErrorHandler.js.js'
 import { Ounce } from './Ounce.js'
 import { Pound } from './Pound.js'
 
@@ -42,21 +43,20 @@ export class WeightConverter {
   /**
    * Handles weight conversion errors.
    *
-   * @param errorHandler - The error handler object.
+   * @param errorHandler - The generic error handler object.
    * @param options - The options object to validate.
    */
   validateWeightConversion (errorHandler, options) {
-    try {
-      if (!options) {
-        throw 'You have to specify an options object, see README'
-      }
-
-      errorHandler.validateWeightFromUnit(options.fromUnit)
-      errorHandler.validateWeightToUnit(options.toUnit)
-      errorHandler.validatePositiveValue(options.value)
-
-    } catch (error) {
-
+    if (!options) {
+      throw 'You have to specify an options object, see README'
     }
+    errorHandler.validatePositiveValue(options.value)
+    Object.values(options).forEach(value => {
+      errorHandler.isEmpty(value)
+    })
+
+    const weightErrorHandler = new WeightErrorHandler()
+    weightErrorHandler.validateWeightFromUnit(options.fromUnit)
+    weightErrorHandler.validateWeightToUnit(options.toUnit)
   }
 }
