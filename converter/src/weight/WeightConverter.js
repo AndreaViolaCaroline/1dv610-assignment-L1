@@ -1,5 +1,5 @@
 import { ErrorHandler } from '../error-handlers/ErrorHandler.js'
-import { WeightErrorHandler } from '../error-handlers/weight-errors/WeightErrorHandler.js.js'
+import { WeightErrorHandler } from '../error-handlers/weight-errors/WeightErrorHandler.js'
 import { Ounce } from './Ounce.js'
 import { Pound } from './Pound.js'
 

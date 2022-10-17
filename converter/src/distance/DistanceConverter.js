@@ -1,5 +1,5 @@
 import { ErrorHandler } from '../error-handlers/ErrorHandler.js'
-import { DistanceErrorHandler } from '../error-handlers/distance-errors/DistanceErrorHandler.js.js'
+import { DistanceErrorHandler } from '../error-handlers/distance-errors/DistanceErrorHandler.js'
 import { Foot } from './Foot.js'
 import { Inch } from './Inch.js'
 import { Yard } from './Yard.js'

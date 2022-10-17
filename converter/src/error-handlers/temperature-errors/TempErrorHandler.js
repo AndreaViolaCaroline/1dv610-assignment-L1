@@ -1,4 +1,4 @@
-import { TemperatureError } from './temperature-errors/TemperatureError.js.js'
+import { TemperatureError } from './temperature-errors/TemperatureError.js'
 /**
  * Class handling temperature unit validation.
  */

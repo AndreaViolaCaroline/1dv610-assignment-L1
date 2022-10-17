@@ -1,5 +1,5 @@
 import { ErrorHandler } from '../error-handlers/ErrorHandler.js'
-import { VolumeErrorHandler } from '../error-handlers/volume-errors/VolumeErrorHandler.js.js'
+import { VolumeErrorHandler } from '../error-handlers/volume-errors/VolumeErrorHandler.js'
 import { Volume } from './Volume.js'
 
 /**

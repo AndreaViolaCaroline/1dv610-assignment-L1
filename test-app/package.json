@@ -11,7 +11,7 @@
   "author": "Andrea Viola Caroline Åkesson",
   "license": "ISC",
   "dependencies": {
-    "@violacaroline/wizard": "^2.0.6",
+    "@violacaroline/wizard": "^3.0.0",
     "readline-sync": "^1.4.10"
   }
 }
