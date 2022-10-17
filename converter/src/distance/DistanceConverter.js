@@ -64,7 +64,7 @@ export class DistanceConverter {
    */
   validateDistanceConversion (errorHandler, options) {
     if (!options) {
-      throw 'You have to specify an options object, see README'
+      throw new Error('You have to specify an options object, see README')
     }
 
     Object.values(options).forEach(value => {

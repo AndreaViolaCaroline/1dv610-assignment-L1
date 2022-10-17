@@ -33,7 +33,7 @@ export class VolumeConverter {
    */
   validateVolumeConversion (errorHandler, options) {
     if (!options) {
-      throw 'You have to specify an options object, see README'
+      throw new Error('You have to specify an options object, see README')
     }
     errorHandler.validatePositiveValue(options.value)
 

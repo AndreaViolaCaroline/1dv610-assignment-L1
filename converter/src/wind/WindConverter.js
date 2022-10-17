@@ -63,7 +63,7 @@ export class WindConverter {
    */
   validateWindConversion (errorHandler, options) {
     if (!options) {
-      throw 'You have to specify an options object, see README'
+      throw new Error('You have to specify an options object, see README')
     }
     errorHandler.validatePositiveValue(options.value)
     Object.values(options).forEach(value => {
