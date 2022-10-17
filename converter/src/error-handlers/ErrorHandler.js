@@ -3,7 +3,7 @@
  */
 export class ErrorHandler {
   /**
-   * Ensure that temp value is a number.
+   * Ensure that temp value is a number. Throws an error if it is not.
    *
    * @param input - The input to validate.
    */
@@ -15,7 +15,7 @@ export class ErrorHandler {
   }
 
   /**
-   * Ensure that value is a positive number.
+   * Ensure that value is a positive number. Throws an error if it is not.
    *
    * @param input - The input to validate.
    */
@@ -29,7 +29,7 @@ export class ErrorHandler {
   }
 
   /**
-   * Is the input empty?
+   * Is the input empty? Throws an error if true.
    *
    * @param input - Input to be validated.
    */
@@ -37,6 +37,18 @@ export class ErrorHandler {
     if (input === '') {
       throw new Error('You have not provided all necessary info (unit to convert from/to or the value)')
     } 
+  }
+
+  /**
+   * Is unit identical? Throws an error if true.
+   *
+   * @param fromUnit - From unit to be validated.
+   * @param toUnit - To unit to be validated.
+   */
+  isIdenticalUnit (fromUnit, toUnit) {
+    if (fromUnit === toUnit) {
+      throw new Error('You can not convert from and to the same unit')
+    }
   }
 
   /**
