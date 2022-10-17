@@ -234,7 +234,7 @@ console.log('The converted value', convertedValue)
 
 ## Version
 
-This is version 3.0.12 of this package.
+This is version 3.0.14 of this package.
 
 ## Test Report
 
