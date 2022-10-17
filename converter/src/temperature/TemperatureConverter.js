@@ -1,5 +1,5 @@
 import { Temperature } from './Temperature.js'
-import { TempErrorHandler } from '../error-handlers/TempErrorHandler.js'
+import { TempErrorHandler } from '../error-handlers/temperature-errors/TempErrorHandler.js'
 import { ErrorHandler } from '../error-handlers/ErrorHandler.js'
 
 /**
