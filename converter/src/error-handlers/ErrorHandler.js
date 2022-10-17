@@ -34,10 +34,11 @@ export class ErrorHandler {
    * Is the input empty?
    *
    * @param input - Input to be validated.
-   * @return - True if input is empty.
    */
   isEmpty (input) {
-    return input === ''
+    if (input === '') {
+      throw new Error('The unit is empty')
+    } 
   }
 
   /**
