@@ -28,8 +28,7 @@ export class Wind {
       if (error instanceof Error) {
         console.log('This is a generic error', error.message)
       } else {
-        console.log(error.getErrorInfo())
-        // console.log('This is a unit error', error.getErrorInfo())
+        console.log('This is a unit error', error.getErrorInfo())
       }
     }
   }

@@ -8,9 +8,8 @@ export class ErrorHandler {
    * @param input - The input to validate.
    */
   validateValue (input) {
-    if (this.isEmpty(input)) {
-      throw new Error('The value is empty')
-    } else if (this.isNotNumber(input)) {
+    this.isEmpty(input)
+    if (this.isNotNumber(input)) {
       throw new Error('The value is not a number')
     }
   }
@@ -21,9 +20,8 @@ export class ErrorHandler {
    * @param input - The input to validate.
    */
   validatePositiveValue (input) {
-    if (this.isEmpty(input)) {
-      throw new Error('The value is empty')
-    } else if (this.isNotNumber(input)) {
+    this.isEmpty(input)
+    if (this.isNotNumber(input)) {
       throw new Error('The value is not a number')
     } else if (!this.isPositive(input)) {
       throw new Error('Number must be positive')
@@ -37,7 +35,7 @@ export class ErrorHandler {
    */
   isEmpty (input) {
     if (input === '') {
-      throw new Error('The unit is empty')
+      throw new Error('You have not provided all necessary info (unit to convert from/to or the value)')
     } 
   }
 
