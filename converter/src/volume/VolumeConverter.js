@@ -39,6 +39,5 @@ export class VolumeConverter {
 
     const volumeErrorHandler = new VolumeErrorHandler()
     volumeErrorHandler.validateVolumeFromUnit(options.fromUnit)
-    volumeErrorHandler.validateVolumeToUnit(options.toUnit)
   }
 }
