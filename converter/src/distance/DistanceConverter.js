@@ -73,5 +73,10 @@ export class DistanceConverter {
     errorHandler.validatePositiveValue(options.value)
 
     this.#distanceErrorHandler.validateDistanceFromUnit(options.fromUnit)
+    if (options.toUnit === 'centimers' || options.toUnit === 'meters') {
+      this.#distanceErrorHandler.validateDistanceToCentimeterAndMeter(options.toUnit)
+    } else {
+      this.#distanceErrorHandler.validateDistanceToMeterAndKilometer(options.toUnit)
+    }
   }
 }
