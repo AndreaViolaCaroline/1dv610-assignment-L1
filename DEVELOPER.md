@@ -20,4 +20,4 @@ This folder contains a small testing app that is independent of the converter an
 
 ### TODO
 
-New algorithms could be added in each unit file. Remember to add it in the respective converter files switch statement as well as in the respective error handlers isvalidUnit() method.
+New algorithms could be added in each unit file for the library to cover more conversions. Remember to add it in the respective converter files switch statement as well as in the respective error handlers isvalidUnit() methods (there are several kinds at the moment).
