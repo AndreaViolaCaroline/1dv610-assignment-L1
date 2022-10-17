@@ -12,9 +12,9 @@ export class Pound {
     let convertedValue
 
     if (fromUnit === 'pounds' && toUnit === 'grams') {
-      convertedValue = converter.convertToGrams(value)
+      convertedValue = this.convertToGrams(value)
     } else if (fromUnit === 'pounds' && toUnit === 'kilograms') {
-      convertedValue = converter.convertToKilograms(value)
+      convertedValue = this.convertToKilograms(value)
     }
 
     return convertedValue

@@ -193,7 +193,7 @@ console.log('The converted value', convertedValue)
 
 ## Version
 
-This is version 3.0.8 of this package.
+This is version 3.0.10 of this package.
 
 ## Test Report
 
