@@ -20,10 +20,51 @@ The Wizard is not complete, meaning, it does NOT convert back and forth between 
 
 Run `npm i @violacaroline/wizard`
 
-
 ## How do you use?
 
 import Wizard from '@violacaroline/wizard'
+
+### Errors
+
+The library throws error objects.
+
+Generic errors covering empty/invalid option object or validation of numbers/positive numbers are of the basic javascript Error type containing a user friendly description of the problem in the error.message property. 
+
+Specific unit errors are thrown when someone enters an invalid unit type for the kind of conversion that is desired (wind, temperature, distance, weight, volume). The error contains a user friendly description of the problem through error.getErrorInfo()
+List of unit errors:
+* WindError
+* TemperatureError
+* DistanceError
+* WeightError
+* VolumeError
+
+Wrapping your wizard conversion method in a try catch block will let you catch the error and display/handle it as you wish. See example below.
+
+```
+import Wizard from '@violacaroline/wizard'
+
+const wizard = new Wizard()
+
+const options = {
+  fromUnit: 'kmh',
+  toUnit: 'mph',
+  value: 100
+}
+
+try {
+  const convertedValue = wizard.convertWind(options)
+
+  console.log('The converted value', convertedValue)
+
+} catch {
+  if (error instanceof Error) {
+    console.log('This is a generic error: ', error.message)
+  } else {
+    console.log('This is a unit specific error: ', error.getErrorInfo())
+  }
+}
+
+```
 
 ### Converting wind
 

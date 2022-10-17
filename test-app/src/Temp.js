@@ -25,10 +25,9 @@ export class Temperature {
 
     } catch (error) {
       if (error instanceof Error) {
-        console.log('This is a generic error', error.message)
+        console.log('This is a generic error: ', error.message)
       } else {
-        console.log(error.getErrorInfo())
-        // console.log('This is a unit error', error.getErrorInfo())
+        console.log('This is a unit specific error: ', error.getErrorInfo())
       }
     }
   }
