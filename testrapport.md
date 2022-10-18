@@ -63,11 +63,11 @@ All units/classes converts from the value 100, i.e. Class KilometerPerHour expec
 | Error  | Expected output | Actual output | Fixes |
 | ----------- | :----: | :----: | :----: |
 | Missing options object | You have to specify an options object, see README | You have to specify an options object, see README | |
-| Missing fromUnit | 'The unit is empty' | 'The unit is empty' | |
+| Missing fromUnit | 'You have not provided all necessary info (unit to convert from/to or the value)' | 'You have not provided all necessary info (unit to convert from/to or the value)' | |
 | Invalid fromUnit | 'The unit is not a valid unit (kmh, ms, fts, mph, knots)' | The unit is not a valid unit (kmh, ms, fts, mph, knots)' | |
-| Missing toUnit | 'The unit is empty' | 'The unit is empty' | |
+| Missing toUnit | 'You have not provided all necessary info (unit to convert from/to or the value)' | 'You have not provided all necessary info (unit to convert from/to or the value)' | |
 | Invalid toUnit | The unit is not a valid unit (kmh, ms, fts, mph, knots)' | The unit is not a valid unit (kmh, ms, fts, mph, knots)' | |
-| Missing value | 'The value is empty' | 'The input is empty' | Changed input to value |
+| Missing value | 'You have not provided all necessary info (unit to convert from/to or the value)' | 'You have not provided all necessary info (unit to convert from/to or the value)' | Changed input to value |
 | Invalid value | 'The value is not a number' | 'The value is not a number' | |
 | Value is not positive | Number must be positive | Number must be positive | |
 
@@ -130,9 +130,9 @@ All units/classes converts from the value 100, i.e. Class Temperature expected/a
 | Error  | Expected output | Actual output | Fixes |
 | ----------- | :----: | :----: | :----: |
 | Missing options object | You have to specify an options object, see README | You have to specify an options object, see README | |
-| Missing from | 'The unit is empty' | 'The unit is empty' | |
+| Missing from | 'You have not provided all necessary info (unit to convert from/to or the value)' | 'You have not provided all necessary info (unit to convert from/to or the value)' | |
 | Invalid from | 'The unit is not a valid unit (celsius/fahrenheit)' | 'The unit is not a valid unit (celsius/fahrenheit)' | |
-| Missing value | 'The value is empty' | 'The value is empty' | |
+| Missing value | 'You have not provided all necessary info (unit to convert from/to or the value)' | 'You have not provided all necessary info (unit to convert from/to or the value)' | |
 | Invalid value | 'The value is not a number' | 'The value is not a number' | |
 
 ### Class Temperature
@@ -155,11 +155,11 @@ All units/classes converts from the value 100, i.e. Class Inch expected/actual v
 | Error  | Expected output | Actual output | Fixes |
 | ----------- | :----: | :----: | :----: |
 | Missing options object | You have to specify an options object, see README | You have to specify an options object, see README | |
-| Missing fromUnit | 'The unit is empty' | 'The unit is empty' | |
+| Missing fromUnit | 'You have not provided all necessary info (unit to convert from/to or the value)' | 'You have not provided all necessary info (unit to convert from/to or the value)' | |
 | Invalid fromUnit | 'The unit is not a valid unit (inches, feet, yards, miles)' | 'The unit is not a valid unit (inches, feet, yards, miles)' | |
-| Missing toUnit | 'The unit is empty' | 'The unit is empty' | |
+| Missing toUnit | 'You have not provided all necessary info (unit to convert from/to or the value)' | 'You have not provided all necessary info (unit to convert from/to or the value)' | |
 | Invalid toUnit | The unit is not a valid unit (centimeters, meters / meters, kilometers)' | The unit is not a valid unit (centimeters, meters / meters, kilometers)' | |
-| Missing value | 'The value is empty' | 'The value is empty' | |
+| Missing value | 'You have not provided all necessary info (unit to convert from/to or the value)' | 'You have not provided all necessary info (unit to convert from/to or the value)' | |
 | Invalid value | 'The value is not a number' | 'The value is not a number' | |
 | Value is not positive | Number must be positive | Number must be positive | |
 
@@ -204,11 +204,11 @@ All units/classes converts from the value 100, i.e. Class Pound expected/actual 
 | Error  | Expected output | Actual output |
 | ----------- | :----: | :----: |
 | Missing options object | You have to specify an options object, see README | You have to specify an options object, see README | 
-| Missing fromUnit | 'The unit is empty' | 'The unit is empty' | 
+| Missing fromUnit | 'You have not provided all necessary info (unit to convert from/to or the value)' | 'You have not provided all necessary info (unit to convert from/to or the value)' | 
 | Invalid fromUnit | 'The unit is not a valid unit (ounces, pounds)' | The unit is not a valid unit (ounces, pounds)' | 
-| Missing toUnit | 'The unit is empty' | 'The unit is empty' | 
+| Missing toUnit | 'You have not provided all necessary info (unit to convert from/to or the value)' | 'You have not provided all necessary info (unit to convert from/to or the value)' | 
 | Invalid toUnit | The unit is not a valid unit (grams, kilograms)' | The unit is not a valid unit (grams, kilograms)' | 
-| Missing value | 'The value is empty' | 'The value is empty' |  
+| Missing value | 'You have not provided all necessary info (unit to convert from/to or the value)' | 'You have not provided all necessary info (unit to convert from/to or the value)' |  
 | Invalid value | 'The value is not a number' | 'The value is not a number' | 
 | Value is not positive | Number must be positive | Number must be positive | 
 
@@ -239,9 +239,9 @@ All units/classes converts from the value 100, i.e. Class KilometerPerHour expec
 | Error  | Expected output | Actual output |
 | ----------- | :----: | :----: |
 | Missing options object | You have to specify an options object, see README | You have to specify an options object, see README | 
-| Missing fromUnit | 'The unit is empty' | 'The unit is empty' | 
+| Missing fromUnit | 'You have not provided all necessary info (unit to convert from/to or the value)' | 'You have not provided all necessary info (unit to convert from/to or the value)' | 
 | Invalid fromUnit | 'The unit is not a valid unit (pints, gallons)' | The unit is not a valid unit (pints, gallons)' |  
-| Missing value | 'The value is empty' | 'The value is empty' |  
+| Missing value | 'You have not provided all necessary info (unit to convert from/to or the value)' | 'You have not provided all necessary info (unit to convert from/to or the value)' |  
 | Invalid value | 'The value is not a number' | 'The value is not a number' | 
 | Value is not positive | Number must be positive | Number must be positive |
 
