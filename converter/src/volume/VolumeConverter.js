@@ -36,6 +36,9 @@ export class VolumeConverter {
       throw new Error('You have to specify an options object, see README')
     }
     errorHandler.validatePositiveValue(options.value)
+    Object.values(options).forEach(value => {
+      errorHandler.isEmpty(value)
+    })
 
     const volumeErrorHandler = new VolumeErrorHandler()
     volumeErrorHandler.validateVolumeFromUnit(options.fromUnit)
